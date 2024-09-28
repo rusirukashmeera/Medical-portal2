@@ -1,0 +1,155 @@
+/* General reset for body */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header.headerX {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    position: relative;
+    background-color: #A0E9FF;
+    height: 100px;
+    margin: 0;
+    padding: 10px;
+}
+
+.tops{
+    flex: 1; /*not necessary*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+footer.footerX{
+    text-align: center;
+    background-color: #89CFF3;
+    margin-top: auto;
+    width: 100%;
+    height: 50px;
+    font-weight: bold;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.profile{
+    margin-right: 100px;
+    display: flex;
+    height: 100px;
+}
+
+.avatar{
+    width: 100px;
+    height: 100px;
+    margin: 0;
+}
+
+.accInfo{
+    padding-left: 5px;
+    margin-top: 60px;
+    width: 40px;
+}
+
+.title {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.navbar {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+    background-color: #89CFF3;
+}
+
+.content{
+    flex: 1;
+    height: 100%;
+    margin-top: 170px;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../images/bg.jpg);
+    background-size: cover;
+}
+
+ul.options {
+    float: left;  /*not necessary?*/
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.options li {
+    list-style: none;
+    font-size: 16px;
+    margin: 0;
+    padding: 0;
+}
+
+ul.options li a {
+    text-decoration: none;
+    display: block;
+    height: 22px;
+    padding: 14px 16px;
+    margin: 0;
+    color: #000000;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+   
+ul.options li a:hover {
+    background-color: #80B3FF;
+}
+
+.active{
+    background-color: hsl(216, 100%, 65%);
+}
+
+.signup{
+    margin-left: auto;
+    margin-right: 147px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 25px;
+    border-width: 3px;
+    background-color: #A0E9FF;
+    transition: 0.3s ease;
+}
+
+.signup:hover{
+    background-color: #80B3FF; 
+}
+
+.signin{
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translateX(-50%, -50%);
+    text-align: center;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
