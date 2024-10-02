@@ -1,0 +1,64 @@
+.offlineBookingDiv{
+    display: flex;
+    align-items: center;
+    height: 70vh;
+}
+
+.offlineBooking{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.offlineBooking fieldset{
+    border: 2px solid black;
+    border-radius: 10px;
+    margin: 10px;
+    background-color: hsla(204, 89%, 57%, 0.1);
+}
+
+.leftContent{
+    display: flex;
+    flex-direction: column;
+}
+
+.rightContent{
+    height: 100%;
+}
+
+.bookingBtns button{
+    font-size: 18px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+
+#bookingBtn1{
+    color: #000000;
+    background-color: #ffffff;
+    font-weight: bold;
+}
+
+#bookingBtn2{
+    color: #ffffff;
+    background-color: #000000;
+    font-weight: bold;  
+}
+
+.bookingTopics{
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.bookingLbls{
+    font-size: 17px;
+}
+
+.bookingVals{
+    width: 100%;
+    font-size: 16px;
+    border: 2px solid #000000;
+    border-radius: 5px;
+    padding: 5px 10px;
+    box-sizing: border-box;
+}
