@@ -1,3 +1,14 @@
+<?php
+include_once ("config.php");
+session_start();
+
+$firstName = $_SESSION["firstName"];
+$lastName = $_SESSION["lastName"];
+/*variables for showing user name and type*/
+?>
+
+<
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,14 +24,14 @@
             <img class="logo" src="images/logo2.png" alt="MEDPORTAL Logo">
             <div class="title">
                 <div>
-                    <h3 style="font-size: 30px; margin-bottom: 5px;">Lifeline Healthcare</h3>
-                    <h1 style="font-size: 50px; margin-top: 0;">MEDPORTAL</h1>
+                    <h3 class="title-text" style="font-size: 30px; margin-bottom: 5px;">Lifeline Healthcare</h3>
+                    <h1 class="title-text" style="font-size: 50px; margin-top: 0;">MEDPORTAL</h1>
                 </div>
             </div>
             <div class="profile">
                 <img class="avatar" src="images/avatar.png" alt="Generic Avatar">
                 <div class="accInfo">
-                    <label class="accName">Doc_name</label><br>
+                    <label class="accName"><?php echo $firstName." ".$lastName ?></label><br>
                     <label class="accType">Doctor</label>
                 </div>
             </div>
@@ -42,24 +53,32 @@
 
             <div class="session">
                 <div class="session-details">
-                    <form action="" method="POST" class="date-time">
+                    <form action="doc-appoinment-ongoing.php" method="POST" class="date-time">
                         <label for="ID">Appoinment ID:</label> 
                         <input type="text" id="patient_id" name="patient_id"><br><br>
 
                         <fieldset>
                             <legend>Patient Details:</legend>
-                            <input type="text" value="ghtrh">
-                            <p></p>
+                            <input type="text" value="Patient ID:" class="input-hide" readonly>  <input type="text" value="ghtrh" class="input-hide" readonly><br><br>
+                            <input type="text" value="Name:" class="input-hide" readonly>  <input type="text" value="ghtrh" class="input-hide" readonly><br><br>
+                            <input type="text" value="Age:" class="input-hide" readonly>  <input type="text" value="ghtrh" class="input-hide" readonly><br><br>
+                            <input type="text" value="Gender:" class="input-hide" readonly>  <input type="text" value="ghtrh" class="input-hide" readonly><br><br>
                         </fieldset>
 
+                        <input type="submit" id="submit" value="Search">
+                    </form>
+                </div>
+
+                <div class="prescription">
+                    <form action="doc-appoinment-ongoing.php">
                         <fieldset>
                             <legend>Prescription:</legend>
                             <textarea id="prescription-details" name="prescription-details"  ></textarea><br><br>
                         </fieldset>
 
-                        <input type="submit" id="submit">
+                        <input type="submit" id="save" value="Save">
+                        <button id="edit">Edit</button>
                     </form>
-                    
                 </div>
             </div>
 
