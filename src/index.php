@@ -1,14 +1,34 @@
 <?php
+    include_once("config.php");
     session_start();
-    $loginCheck = 0;
+    $loginCheck = null;
     if(isset($_POST["signinHome"])){
         if(!empty($_POST["email"]) && !empty($_POST["password"])){
             $_SESSION["email"] = $_POST["email"];
             $_SESSION["password"] = $_POST["password"];
-            $loginCheck = 1;
-            header("Location: receptionist_offline.php");
+            $sql = "SELECT * FROM user_table WHERE Email = '".$_SESSION["email"]."' AND Password = '".$_SESSION["password"]."'";
+            $result = mysqli_query($conn, $sql);
+            if(mysqli_num_rows($result) > 0){
+                $loginCheck = 1;
+                $row = mysqli_fetch_assoc($result);
+                $_SESSION["firstName"] = $row["First_Name"];
+                $_SESSION["lastName"] = $row["Last_Name"];
+                $_SESSION["accType"] = $row["Account_Type"];
+                switch($row["Account_Type"]){
+                    case "Receptionist": header("Location: manage_appointments.php");
+                    break;
+                    case "Doctor": ;
+                    break;
+                    case "Patient": ;
+                    break;
+                }
+            }
+            else{
+                $loginCheck = 0;
+            }
         }
     }
+    mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -25,15 +45,15 @@
             <img class="logo" src="images/logo2.png" alt="MEDPORTAL Logo">
             <div class="title">
                 <div>
-                    <h3 style="font-size: 25px; margin-bottom: 5px; color: #ffffff;">Lifeline Healthcare</h3>
-                    <h1 style="font-size: 40px; margin-top: 0; color: #ffffff;">MEDPORTAL</h1>
+                    <h3 class="title-text" style="font-size: 25px; margin-bottom: 5px;">Lifeline Healthcare</h3>
+                    <h1 class="title-text" style="font-size: 40px; margin-top: 0;">MEDPORTAL</h1>
                 </div>
             </div>
             <div class="profile">
                 <img class="avatar" src="images/avatar.png" alt="Generic Avatar">
                 <div class="accInfo">
-                    <label class="accName">fegegwfew</label><br>
-                    <label class="accType">Administrator</label>
+                    <label class="accName"></label><br>
+                    <label class="accType">Guest</label>
                 </div>
             </div>
         </header>
@@ -45,18 +65,22 @@
                 <li><a href="#">Contact Us</a></li>
                 <li><a href="#">FAQ</a></li>
             </ul>
-            <button class="signupBtn">Sign Up</button>
+            <button id="signupBtn">Sign Up</button>
         </div>
     </div>
     <div class="content" id="content">
         <div class="signin">
             <form id="signinForm" action="index.php" method="POST">
                 <label class="signinLbls" for="">Username</label><br>
-                <input class="signinVals" type="email" name="email" id="email"><br><br>
+                <input class="signinVals" type="email" name="email" id="email" required><br><br>
                 <label class="signinLbls" for="">Password</label><br>
-                <input class="signinVals" type="password" name="password" id="password"><br><br><br>
+                <input class="signinVals" type="password" name="password" id="password" required><br><br><br>
                 <button id="signinHome" name="signinHome">Sign In</button>
-                <label for="" class="signinLbls" id="check"></label>
+                <label for="" class="signinLbls" id="check" style="color: #ff0000;"><?php
+                    if(isset($_POST["signinHome"]) && $loginCheck == 0){
+                        echo "<br><br>Incorrect Username or Password";
+                    }
+                ?></label>
             </form>
         </div>
     </div>
@@ -64,5 +88,6 @@
         <p>Lifeline Healthcare &copy; 2024. All rights reserved.</p>
     </footer>
     <script src="js/script.js"></script>
+    <script src="js/home.js"></script>
 </body>
 </html>

@@ -5,16 +5,27 @@
     $lastName = $_SESSION["lastName"];
     $sql_doc = "SELECT U.First_Name, U.Last_Name, D.Doctor_Id, D.Specialization FROM user_table U, doctor D WHERE U.Email = D.Email";
     $result_doc = mysqli_query($conn, $sql_doc);
-    include_once("insert_record_offline.php");
-    // header("Location: manage_appointments.php");
+    $sql_get_apps = "SELECT C.Appointment_Id, C.First_Name AS Pat_Name, C.Age, C.Gender, U.First_Name AS Doc_Name, C.Date, C.Session_No, C.Charge
+    FROM confirm_booking C, doctor D, user_table U WHERE C.Doctor_Id = D.Doctor_Id AND D.Email = U.Email";
+    $result_get_apps = mysqli_query($conn, $sql_get_apps);
+    $e_appID = $_GET["appID"];
+    $_SESSION["appID"] = $e_appID;
+    $e_patName = $_GET["patName"];
+    $e_age = $_GET["age"];
+    $e_gender = $_GET["gender"];
+    $e_docName = $_GET["docName"];
+    $e_dateX = $_GET["dateX"];
+    $e_timeX = $_GET["timeX"];
+    $e_charge = $_GET["charge"];
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Receptionist_Offline</title>
+    <title>Manage_Appointments</title>
     <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/manage_appointments.css">
     <link rel="stylesheet" href="styles/receptionist_offline.css">
 </head>
 <body>
@@ -39,26 +50,29 @@
         </header>
         <div class="navbar" id="navbar">
             <ul class="options">
-                <li><a href="manage_appointments.php">Manage Appointments</a></li>
+                <li><a href="#" class="active">Manage Appointments</a></li>
                 <li><a href="#">Online Booking</a></li>
-                <li><a href="#" class="active">Offline Booking</a></li>
+                <li><a href="receptionist_offline.php">Offline Booking</a></li>
             </ul>
             <button id="signupBtn" name="signupBtn">Sign Out</button>
         </div>
     </div>
     <div class="content" id="content">
-        <div class="offlineBookingDiv">
-            <form class="offlineBooking" action="receptionist_offline.php" method="GET">
+    <?php
+        echo "<center><h2>Edit Appointment - $e_appID</h2><center>";
+    ?>
+    <div class="offlineBookingDiv">
+            <form class="offlineBooking" action="process_edit.php" method="GET">
                 <div class="leftContent">
                     <div class="leftContentTop">
                         <fieldset>
                             <legend class="bookingTopics">Patient Details</legend>
                             <label for="" class="bookingLbls">Patient Name</label><br>
-                            <input type="text" class="bookingVals" name="patName" required><br><br>
+                            <input type="text" class="bookingVals" name="patName" value="<?php echo $e_patName; ?>" required><br><br>
                             <label for="" class="bookingLbls">Patient Age</label><br>
-                            <input type="number" class="bookingVals" name="patAge" min="1" required><br><br>
+                            <input type="number" class="bookingVals" name="patAge" min="1" value="<?php echo $e_age; ?>" required><br><br>
                             <label for="" class="bookingLbls">Patient Gender</label><br>
-                            <input type="radio" name="gender" value="Male"><label for="" class="bookingLbls" checked>Male</label>
+                            <input type="radio" name="gender" value="Male" checked><label for="" class="bookingLbls">Male</label>
                             <input type="radio" name="gender" value="Female"><label for="" class="bookingLbls">Female</label>
                         </fieldset>
                     </div>
@@ -102,8 +116,7 @@
                         <label for="" class="bookingLbls">Total Charge: </label>
                         <input type="number" class="bookingVals" id="totalCharge" name="totalCharge" value="0" style="width: 73%; background-color: #dddddd;" readonly><br><br>
                         <div class="bookingBtns">
-                            <button id="bookingBtn1" name="bookingBtn1">Cancel Reservation</button>
-                            <button id="bookingBtn2" name="bookingBtn2">Confirm Reservation</button>
+                            <button id="bookingBtn3" name="bookingBtn3">Edit Reservation</button>
                         </div>
                     </fieldset>
                 </div>
