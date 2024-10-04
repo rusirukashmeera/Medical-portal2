@@ -6,7 +6,11 @@
     $sql_doc = "SELECT U.First_Name, U.Last_Name, D.Doctor_Id, D.Specialization FROM user_table U, doctor D WHERE U.Email = D.Email";
     $result_doc = mysqli_query($conn, $sql_doc);
     include_once("insert_record_offline.php");
-    // header("Location: manage_appointments.php");
+    if(isset($_POST["logout"])){
+        session_unset();
+        session_destroy();
+        header("Location: index.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,6 +48,9 @@
                 <li><a href="#" class="active">Offline Booking</a></li>
             </ul>
             <button id="signupBtn" name="signupBtn">Sign Out</button>
+            <form id="logoutForm" method="POST" action="receptionist_offline.php" style="display: none;">
+                <input type="text" value="1" name="logout">
+            </form>
         </div>
     </div>
     <div class="content" id="content">

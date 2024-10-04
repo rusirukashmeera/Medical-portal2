@@ -11,5 +11,6 @@
         $sql_insert_offline = "INSERT INTO confirm_booking (First_Name, Age, Gender, Doctor_ID, Date, Session_No, Type, Charge) 
         VALUES ('$patName', $patAge, '$gender', $docID, '$dateX', $timeX, 'Offline', $totalCharge)";
         mysqli_query($conn, $sql_insert_offline);
+        header("Location: manage_appointments.php");
     }
 ?>

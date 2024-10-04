@@ -6,6 +6,11 @@
     $sql_get_apps = "SELECT C.Appointment_Id, C.First_Name AS Pat_Name, C.Age, C.Gender, U.First_Name AS Doc_Name, C.Date, C.Session_No, C.Charge
     FROM confirm_booking C, doctor D, user_table U WHERE C.Doctor_Id = D.Doctor_Id AND D.Email = U.Email";
     $result_get_apps = mysqli_query($conn, $sql_get_apps);
+    if(isset($_POST["logout"])){
+        session_unset();
+        session_destroy();
+        header("Location: index.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -43,6 +48,9 @@
                 <li><a href="receptionist_offline.php">Offline Booking</a></li>
             </ul>
             <button id="signupBtn" name="signupBtn">Sign Out</button>
+            <form id="logoutForm" method="POST" action="manage_appointments.php" style="display: none;">
+                <input type="text" value="1" name="logout">
+            </form>
         </div>
     </div>
     <div class="content" id="content">
@@ -100,6 +108,13 @@
         <p>Lifeline Healthcare &copy; 2024. All rights reserved.</p>
     </footer>
     <script src="js/script.js"></script>
-    <script src="js/receptionist_offline.js"></script>
+    <script>
+        const signupBtn = document.getElementById("signupBtn");
+        const logoutForm = document.getElementById("logoutForm");
+        function logOut(){
+            logoutForm.submit();
+        }
+        signupBtn.addEventListener("click", logOut);
+    </script>
 </body>
 </html>
