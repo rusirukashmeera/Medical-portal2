@@ -109,8 +109,8 @@
                         <label for="" class="bookingLbls">Total Charge: </label>
                         <input type="number" class="bookingVals" id="totalCharge" name="totalCharge" value="0" style="width: 73%; background-color: #dddddd;" readonly><br><br>
                         <div class="bookingBtns">
-                            <button id="bookingBtn1" name="bookingBtn1">Cancel Reservation</button>
-                            <button id="bookingBtn2" name="bookingBtn2">Confirm Reservation</button>
+                            <button id="bookingBtn1" name="bookingBtn1" type="reset">Cancel Reservation</button>
+                            <button id="bookingBtn2" name="bookingBtn2" type="submit">Confirm Reservation</button>
                         </div>
                     </fieldset>
                 </div>
