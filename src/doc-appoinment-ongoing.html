@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ongoing Session</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/doc-appoinment-ongoing.css">
+</head>
+<body>
+    <div class="tops">
+        <header class="headerX">
+            <img class="logo" src="images/logo2.png" alt="MEDPORTAL Logo">
+            <div class="title">
+                <div>
+                    <h3 style="font-size: 30px; margin-bottom: 5px;">Lifeline Healthcare</h3>
+                    <h1 style="font-size: 50px; margin-top: 0;">MEDPORTAL</h1>
+                </div>
+            </div>
+            <div class="profile">
+                <img class="avatar" src="images/avatar.png" alt="Generic Avatar">
+                <div class="accInfo">
+                    <label class="accName">Doc_name</label><br>
+                    <label class="accType">Doctor</label>
+                </div>
+            </div>
+        </header>   
+        <div class="navbar">
+            <ul class="options">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#" class="active">Session</a></li>
+            </ul>
+            <button class="signupBtn">Sign Up</button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="ongoing-box">
+
+            <div class="session">
+                <div class="session-details">
+                    <form action="" method="POST" class="date-time">
+                        <label for="ID">Appoinment ID:</label> 
+                        <input type="text" id="patient_id" name="patient_id"><br><br>
+
+                        <fieldset>
+                            <legend>Patient Details:</legend>
+                            <input type="text" value="ghtrh">
+                            <p></p>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend>Prescription:</legend>
+                            <textarea id="prescription-details" name="prescription-details"  ></textarea><br><br>
+                        </fieldset>
+
+                        <input type="submit" id="submit">
+                    </form>
+                    
+                </div>
+            </div>
+
+            
+            
+        </div>
+    </div>
+    <footer class="footerX">
+        <p>Lifeline Healthcare &copy; 2024. All rights reserved.</p>
+    </footer>
+
+    <script src="../src/js/doc-appoinment-ongoing.js"></script>
+</body>
+</html>
