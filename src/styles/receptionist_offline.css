@@ -45,6 +45,13 @@
     font-weight: bold;  
 }
 
+#bookingBtn3{
+    color: #ffffff;
+    background-color: #000000;
+    font-weight: bold;
+    width: 394.98px;
+}
+
 .bookingTopics{
     font-weight: bold;
     font-size: 20px;
