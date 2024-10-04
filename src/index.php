@@ -17,7 +17,7 @@
                 switch($row["Account_Type"]){
                     case "Receptionist": header("Location: manage_appointments.php");
                     break;
-                    case "Doctor": ;
+                    case "Doctor": header("Location: doc-schedule.html");
                     break;
                     case "Patient": ;
                     break;
