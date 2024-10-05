@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDPORTAL</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/channeling.css">
+    
+
+</head>
+<body>
+    <div class="tops">
+        <header class="headerX">
+            <img class="logo" src="images/logo2.png" alt="MEDPORTAL Logo">
+            <div class="title">
+                <div>
+                    <h3 style="font-size: 30px; margin-bottom: 5px;">Lifeline Healthcare</h3>
+                    <h1 style="font-size: 50px; margin-top: 0;">MEDPORTAL</h1>
+                </div>
+            </div>
+            <div class="profile">
+                <img class="avatar" src="images/avatar.png" alt="Generic Avatar">
+                <div class="accInfo">
+                    <label class="accName">gergregfregerhrterg</label><br>
+                    <label class="accType">Administrator</label>
+                </div>
+            </div>
+        </header>
+        <div class="navbar">
+            <ul class="options">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">FAQ</a></li>
+            </ul>
+            <button class="signupBtn">Sign Up</button>
+        </div>
+    </div>
+
+    <div class="content">
+        <main class="content">
+            <div class="channeling-container">
+                <!-- Left Section -->
+                <div class="left-section">
+                    <img src="images\doctors.jpg" alt="Appointment Image"  width="500" height="400">
+                    
+                </div>
+
+                <!-- Right Section -->
+                <div class="right-section">
+                    <div class="channeling-details">
+                        <h1>Channeling Details</h1>
+                        <form style="outline-style: double; outline-width: 2px; outline-color: black;">
+                           
+                            <label for="specialty">Select Specialty:</label>
+                            <select id="specialty">
+                                <option value="cardiologist">Cardiologist</option>
+                                <!-- Add more specialties as needed -->
+                            </select>
+
+                            <label for="doctor">Select Doctor:</label>
+                            <select id="doctor">
+                                <option value="dr-samantha">Dr. P. Samantha</option>
+                                <!-- Add more doctors as needed -->
+                            </select>
+
+                            <label for="Doctor-ID">Doctor ID:</label>
+                            <input class="details" type="text" id="Doctor-ID" value="XXXXXXXXXXXXXXX" disabled>
+
+
+                            <label for="date">Select Date:</label>
+                            <input class="details" type="date" id="date">
+
+                            <label for="time-slot">Select from an Available Time Slot:</label>
+                            <div class="time-slot-options">
+                                <input type="radio" id="slot1" name="time-slot" value="slot1">
+                                <label for="slot1">x.00 - x.00</label>
+
+                                <input type="radio" id="slot2" name="time-slot" value="slot2">
+                                <label for="slot2">x.00 - x.00</label>
+
+                                <input type="radio" id="slot3" name="time-slot" value="slot3">
+                                <label for="slot3">x.00 - x.00</label>
+                            </div>
+                            <button class="channel" id="channel" type="submit">CHANNEL DOCTOR</button>
+                       
+                            <button class="cancel" type="button">CANCEL</button>
+                        </form>
+                    </div>
+                        
+                </div>
+            </div>
+            
+        </main>
+               
+    </div>
+    
+    <script src="js/channeling.js"></script>
+
+    <footer class="footerX">
+        <p>Lifeline Healthcare &copy; 2024. All rights reserved.</p>
+    </footer>
+    
+</body>
+</html>

@@ -1,3 +1,4 @@
+/* General reset for body */
 body {
     font-family: sans-serif;
     margin: 0;
@@ -13,14 +14,14 @@ header.headerX {
     justify-content: space-between;
     padding: 10px;
     position: relative;
-    background-color: #002b4c;
-    height: 90px;
+    background-color: #A0E9FF;
+    height: 100px;
     margin: 0;
     padding: 10px;
 }
 
 .tops{
-    /*flex: 1; not necessary*/
+    flex: 1; /*not necessary*/
     position: fixed;
     top: 0;
     left: 0;
@@ -29,7 +30,7 @@ header.headerX {
 
 footer.footerX{
     text-align: center;
-    background-color: #8393ca;
+    background-color: #89CFF3;
     margin-top: auto;
     width: 100%;
     height: 50px;
@@ -37,27 +38,26 @@ footer.footerX{
 }
 
 .logo {
-    width: 80px;
+    width: 100px;
     height: auto;
 }
 
 .profile{
     margin-right: 100px;
     display: flex;
-    height: 80px;
+    height: 100px;
 }
 
 .avatar{
-    width: 80px;
-    height: 80px;
+    width: 100px;
+    height: 100px;
     margin: 0;
 }
 
 .accInfo{
     padding-left: 5px;
-    margin-top: 40px;
+    margin-top: 60px;
     width: 40px;
-    font-weight: bold;
 }
 
 .title {
@@ -73,22 +73,19 @@ footer.footerX{
     height: 50px;
     margin: 0;
     padding: 0;
-    background-color: #8393ca;
+    background-color: #89CFF3;
 }
 
 .content{
     flex: 1;
     height: 100%;
-    padding-top: 160px;
+    margin-top: 170px;
     padding-left: 10px;
     padding-right: 10px;
-    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../images/cloned.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../images/bg.jpg);
     background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
 }
 
 ul.options {
@@ -119,31 +116,51 @@ ul.options li a {
 }
    
 ul.options li a:hover {
-    background-color: #3fbcb9;
+    background-color: #80B3FF;
 }
 
 .active{
-    background-color: #2fa6f3;
+    background-color: hsl(216, 100%, 65%);
 }
 
-.signupBtn{
+.signup{
     margin-left: auto;
-    margin-right: 138px;
+    margin-right: 147px;
     margin-top: 5px;
     margin-bottom: 5px;
-    border: 3px solid black;
-    border-radius: 10px;
+    border-radius: 8px;
     font-weight: bold;
     font-size: 16px;
     padding: 5px 25px;
-    background-color: hsla(179, 50%, 49%, 0.5);
+    border-width: 3px;
+    background-color: #A0E9FF;
     transition: 0.3s ease;
 }
 
-.signupBtn:hover{
-    background-color: #3fbcb9;
+.signup:hover{
+    background-color: #80B3FF; 
 }
 
-.signupBtn:active{
-    background-color: #2fa6f3;
+.signin{
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translateX(-50%, -50%);
+    text-align: center;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 }
+
+.contactbox {
+    background:white;
+    border:#000000;
+    padding: 10px;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 20px;
+    transition:0.3s ease;
+}
+
