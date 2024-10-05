@@ -16,7 +16,6 @@ header.headerX {
     background-color: #002b4c;
     height: 90px;
     margin: 0;
-    padding: 10px;
 }
 
 .tops{
@@ -42,7 +41,7 @@ footer.footerX{
 }
 
 .profile{
-    margin-right: 100px;
+    margin-right: 20px;
     display: flex;
     height: 80px;
 }
@@ -56,8 +55,14 @@ footer.footerX{
 .accInfo{
     padding-left: 5px;
     margin-top: 40px;
+<<<<<<< HEAD
     width: 40px;
     font-weight: bold;
+=======
+    width: 120px;
+    font-weight: bold;
+    color: #888888;
+>>>>>>> 1c19a08156ea0251a8467ecccc3387e1344c2fc8
 }
 
 .title {
@@ -65,6 +70,10 @@ footer.footerX{
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
+}
+
+.title-text{
+    color: hsl(179, 50%, 75%);
 }
 
 .navbar {
@@ -126,7 +135,11 @@ ul.options li a:hover {
     background-color: #2fa6f3;
 }
 
+<<<<<<< HEAD
 .signupBtn{
+=======
+#signupBtn{
+>>>>>>> 1c19a08156ea0251a8467ecccc3387e1344c2fc8
     margin-left: auto;
     margin-right: 138px;
     margin-top: 5px;
@@ -140,10 +153,18 @@ ul.options li a:hover {
     transition: 0.3s ease;
 }
 
+<<<<<<< HEAD
 .signupBtn:hover{
     background-color: #3fbcb9;
 }
 
 .signupBtn:active{
+=======
+#signupBtn:hover{
+    background-color: #3fbcb9;
+}
+
+#signupBtn:active{
+>>>>>>> 1c19a08156ea0251a8467ecccc3387e1344c2fc8
     background-color: #2fa6f3;
 }
