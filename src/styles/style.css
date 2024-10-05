@@ -1,4 +1,3 @@
-/* General reset for body */
 body {
     font-family: sans-serif;
     margin: 0;
@@ -14,14 +13,14 @@ header.headerX {
     justify-content: space-between;
     padding: 10px;
     position: relative;
-    background-color: #A0E9FF;
-    height: 100px;
+    background-color: #002b4c;
+    height: 90px;
     margin: 0;
     padding: 10px;
 }
 
 .tops{
-    flex: 1; /*not necessary*/
+    /*flex: 1; not necessary*/
     position: fixed;
     top: 0;
     left: 0;
@@ -30,7 +29,7 @@ header.headerX {
 
 footer.footerX{
     text-align: center;
-    background-color: #89CFF3;
+    background-color: #8393ca;
     margin-top: auto;
     width: 100%;
     height: 50px;
@@ -38,26 +37,27 @@ footer.footerX{
 }
 
 .logo {
-    width: 100px;
+    width: 80px;
     height: auto;
 }
 
 .profile{
     margin-right: 100px;
     display: flex;
-    height: 100px;
+    height: 80px;
 }
 
 .avatar{
-    width: 100px;
-    height: 100px;
+    width: 80px;
+    height: 80px;
     margin: 0;
 }
 
 .accInfo{
     padding-left: 5px;
-    margin-top: 60px;
+    margin-top: 40px;
     width: 40px;
+    font-weight: bold;
 }
 
 .title {
@@ -73,19 +73,22 @@ footer.footerX{
     height: 50px;
     margin: 0;
     padding: 0;
-    background-color: #89CFF3;
+    background-color: #8393ca;
 }
 
 .content{
     flex: 1;
     height: 100%;
-    margin-top: 170px;
+    padding-top: 160px;
     padding-left: 10px;
     padding-right: 10px;
+    padding-bottom: 20px;
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../images/bg.jpg);
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)), url(../images/cloned.jpg);
     background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 ul.options {
@@ -116,39 +119,31 @@ ul.options li a {
 }
    
 ul.options li a:hover {
-    background-color: #80B3FF;
+    background-color: #3fbcb9;
 }
 
 .active{
-    background-color: hsl(216, 100%, 65%);
+    background-color: #2fa6f3;
 }
 
-.signup{
+.signupBtn{
     margin-left: auto;
-    margin-right: 147px;
+    margin-right: 138px;
     margin-top: 5px;
     margin-bottom: 5px;
-    border-radius: 8px;
+    border: 3px solid black;
+    border-radius: 10px;
     font-weight: bold;
     font-size: 16px;
     padding: 5px 25px;
-    border-width: 3px;
-    background-color: #A0E9FF;
+    background-color: hsla(179, 50%, 49%, 0.5);
     transition: 0.3s ease;
 }
 
-.signup:hover{
-    background-color: #80B3FF; 
+.signupBtn:hover{
+    background-color: #3fbcb9;
 }
 
-.signin{
-    position: absolute;
-    left: 50%;
-    top: 55%;
-    transform: translateX(-50%, -50%);
-    text-align: center;
-    flex: 1;
-    justify-content: center;
-    align-items: center;
-    display: flex;
+.signupBtn:active{
+    background-color: #2fa6f3;
 }

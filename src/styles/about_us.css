@@ -1,0 +1,81 @@
+body{
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.banner {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.story {
+    color:white;
+    padding: 10px 20px;
+    width: 45rem;
+    height : 14rem; 
+    border: 1px solid rgb(44, 62, 80);
+    background-color: rgb(44, 62, 80);
+}
+.story:hover{
+    background-color: gray;
+}
+
+.story h2 {
+    margin-top : 5px;
+    margin-bottom : 5px;
+}
+
+
+.details {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.details div {
+    width: 34%;
+}
+
+h4 {
+    margin: 5px 0 5px 0 ;
+    
+}
+.sub-details{
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#ourValues {
+    text-align: center;
+    margin: 30px 0 0;
+}
+
+.Values {
+    display: flex;
+    justify-content: center;
+    gap: 55px;
+    margin-top: 20px;
+}
+
+.Values div {
+    width: 21%;
+    margin-bottom: 2%;
+    
+}
+
+.Values p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+
+
+
+
+

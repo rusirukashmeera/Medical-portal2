@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MEDPORTAL</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/reception_online.css">
+</head>
+<body>
+    <div class="tops">
+        <header class="headerX">
+            <img class="logo" src="images/logo2.png" alt="MEDPORTAL Logo">
+            <div class="title">
+                <div>
+                    <h3 style="font-size: 30px; margin-bottom: 5px;">Lifeline Healthcare</h3>
+                    <h1 style="font-size: 50px; margin-top: 0;">MEDPORTAL</h1>
+                </div>
+            </div>
+            <div class="profile">
+                <img class="avatar" src="images/avatar.png" alt="Generic Avatar">
+                <div class="accInfo">
+                    <label class="accName">gergregfregerhrterg</label><br>
+                    <label class="accType">Administrator</label>
+                </div>
+            </div>
+        </header>
+        <div class="navbar">
+            <ul class="options">
+                <li><a href="#" >Home</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#" class="active">Online Booking</a></li>
+                <li><a href="#">Offline Booking</a></li>
+            </ul>
+            <button class="signupBtn">Sign Up</button>
+
+        </div>
+    </div>
+    <div class="content">
+
+        <div class="main">
+
+            <div class="section1">
+                
+                <form action="#" method="post">
+                    <input type="search" id="searchId" name="searchId" placeholder="Enter Reference Number">
+                    <button class="search" type="submit" onclick="searchPatient();" >Search</button>
+                </form>
+
+                <form>
+                    <fieldset class="patientInfo">
+                        <legend>Patient Details</Details></legend>
+                        <label for="">Name</label>
+                        <input class="patient" type="text" name="name" placeholder="W.M.D.N Weerakoon" readonly>
+                        <label for="">Address</label>
+                        <input class="patient" type="text" name="address" placeholder="Kegalle" readonly>
+                        <label for="">Phone No</label>
+                        <input class="patient" type="tel" name="number" readonly>
+                        <label>
+                            <input type="radio" name="gender" value="female" disabled> Female
+                        </label>
+                        <label >
+                            <input type="radio" name="gender" value="male" disabled> Male
+                        </label>
+                    </fieldset>
+                </form>
+                
+            </div>
+
+            <div class="section2">
+                <form action="#">
+                    <fieldset class="Booking">
+                        <legend>Booking Details</legend>
+                        <label for="">Select Speciality</label>
+                        <select class="bookingDetail" id="speciality" disabled>
+                            <option>Cardiologist</option>
+                            <option>mmmmmmmmmm</option>
+                            <option>llllllllll</option>
+                        </select>
+
+                        <label for="">Select Doctor</label>
+                        <select class="bookingDetail" id="doctor" disabled>
+                            <option>Dr.aaaaaaaaa</option>
+                            <option>Dr.sssssssss</option>
+                            <option>Dr.ffffffffff</option>
+                        </select>
+
+                        <label for="">Select Date</label>
+                        <input class="bookingDetail" id="date" type="date" readonly>
+
+                        <label for="">Select from an Available Time Slot</label>
+                        <label>
+                            <input type="radio" id="time-slot1" name="time-slot" value="slot1" disabled> XX-XX
+                        </label>
+                        <label>
+                            <input type="radio" id="time-slot2" name="time-slot" value="slot2" disabled> XX-XX
+                        </label>
+                        <label>
+                            <input type="radio" id="time-slot3" name="time-slot" value="slot3" disabled> XX-XX
+                        </label>
+                    
+                        <div class="button" >
+                            <button class="buttonStyle" id="cancel" type="submit">Cancel Resevation</button>
+                            <button class="buttonStyle" id="edit" type="submit" onclick="enableEdit();">Edit Resevation</button>
+                            <button class="buttonStyle" id="confirm" type="submit">Confirm Resevation</button>
+                        </div>
+                        
+                    </fieldset>
+                </form>
+
+            
+                <form ></form>
+                    <fieldset class="Billing">
+                        <legend>Payment</legend>
+                        <label for="HCharge">Hospital Charge</label>
+                        <input class="charge" type="text" id="HCharge" name="HCharge" placeholder="Enter Hospital Bill">
+
+                        <label for="DocCharge">Doctor's Payment</label>
+                        <input class="charge" type="text" id="DocCharge" name="DocCharge" placeholder="Enter Doctor Bill">
+
+                        <label for="TotalCharge">Total Payment</label>
+                        <input class="charge" type="text" id="TotalCharge" name="TotalCharge" placeholder="Enter Total Bill">
+
+                        <!-- <button class="confirm" id="confirm" type="submit">Confirm Payment</button> -->
+                    </fieldset>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <footer class="footerX">
+        <p>Lifeline Healthcare &copy; 2024. All rights reserved.</p>
+    </footer>
+    <script src="js/receptionist_online.js"></script>
+</body>
+</html>
