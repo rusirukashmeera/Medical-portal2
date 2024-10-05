@@ -1,0 +1,118 @@
+body{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+.section1 {
+    display: flex;
+    flex-direction:row;
+}
+
+.topics {
+    width:50%;
+}
+.topics h1 {
+    font-size: 80px;
+    font-weight: 200;
+    color: white;
+    margin-top: 100px;
+    font-family: arial;
+    margin-left: 30px;
+}
+.contact_img {
+    width: 50%;
+}
+
+.open {
+    font-size: 80px;
+    color: #80B3FF;
+    font-weight: bolder;
+    font-style: initial;
+    margin-left: 30px;
+}
+
+.days,
+.time {
+    font-size: 30px;
+    font-weight: 300;
+    color: black;
+    margin-left: 30px;
+}
+
+
+
+
+.contact-section {
+    display: flex; 
+    width: 100%; 
+    padding: 0; 
+    margin-top: 10px; 
+    align-items: flex-start; /* Align items to the top */
+    justify-content: center; /* Center the contact box */
+}
+
+
+
+
+.contact-info {
+    flex: 1; 
+    display: flex;
+    justify-content: center; 
+    padding: 100px; 
+    margin-top: 10px;
+     
+    
+}
+
+
+.contact-box {
+    background-color: lightgray;
+    border: 6px solid black;
+    border-radius: 20px;
+    padding: 20px;
+    width: 500px; 
+    height: 300px;;
+    text-align: left;
+}
+
+.icon{
+    font-size: 30px   
+                                 ;
+}
+
+
+/* Navigation options */
+ul.options {
+    display: flex;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.options li {
+    list-style: none;
+    font-size: 16px;
+}
+
+ul.options li a {
+    text-decoration: none;
+    padding: 14px 16px;
+    color: #000000;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+   
+ul.options li a:hover {
+    background-color: #80B3FF;
+}
+
+.active {
+    background-color: hsl(216, 100%, 65%);
+}
+
+.signup {
+    margin-left: auto;
+     
+}
