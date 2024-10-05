@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conformed Appoinment</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/doc-schedule.css">
+</head>
+<body>
+    <div class="tops">
+        <header class="headerX">
+            <img class="logo" src="images/logo2.png" alt="MEDPORTAL Logo">
+            <div class="title">
+                <div>
+                    <h3 style="font-size: 30px; margin-bottom: 5px;">Lifeline Healthcare</h3>
+                    <h1 style="font-size: 50px; margin-top: 0;">MEDPORTAL</h1>
+                </div>
+            </div>
+            <div class="profile">
+                <img class="avatar" src="images/avatar.png" alt="Generic Avatar">
+                <div class="accInfo">
+                    <label class="accName">doc_name</label><br>
+                    <label class="accType">Doctor</label>
+                </div>
+            </div>
+        </header>
+        <div class="navbar">
+            <ul class="options">
+                <li><a href="#"  class="active">Schedule</a></li>
+                <li><a href="doc-appoinment-ongoing.php" >Session</a></li>
+            </ul>
+            <button id="signupBtn">Log Out</button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="schedule-date-time">
+            <form action="" class="date-time">
+
+                <div class="date">
+                    <label for="date">Date:</label><br>
+                    <input type="date" id="date" name="date" required><br><br>
+                </div>
+
+                <div class="time">
+                    <label for="time">Select the Session:</label><br><br>
+                    <input type="radio" id="time" name="session" >Session 1<br><br>
+                    <input type="radio" id="time" name="session" >Session 2<br><br>
+                    <input type="radio" id="time" name="session" >Session 3<br><br>
+                </div>
+
+                <button class="submit" id="submit">Search</button>
+            </form>
+
+            
+            
+        </div>
+
+        <table id = "schedule-table">
+            <tr>
+                <th>PatientID</th>
+                <th>Patient Name</th>
+                <th>Start Time</th>
+                <th>Date</th>
+            </tr>
+
+        </table>
+
+        <a href="doc-appoinment-ongoing.php" target="_blank"><button id="start-session">Start Session</button></a>
+
+    </div>
+    <footer class="footerX">
+        <p>Lifeline Healthcare &copy; 2024. All rights reserved.</p>
+    </footer>
+
+    <script src="../src/js/doc-schedule.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+.appTable{
+    width: 90%;
+    border-collapse: collapse;
+    background-color: hsla(204, 89%, 57%, 0.1);
+}
+
+.appTable, .appTable th, .appTable td{
+    border: 2px solid #000000;
+}
+
+.appTable th, .appTable td{
+    padding: 10px 10px;
+    text-align: center;
+}

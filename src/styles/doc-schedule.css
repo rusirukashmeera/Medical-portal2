@@ -1,0 +1,88 @@
+.content .schedule-date-time {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+
+.schedule-date-time{
+    border: 2px solid black;
+    border-radius: 5px;
+    margin-top: 20px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #bbe5fa;
+}
+.date-time{
+    margin: 20px;
+}
+
+.date-time button{
+    display: block;
+    margin: 0 auto;
+    margin-top: 50px; 
+    
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 25px;
+    border-width: 3px;
+    background-color: #A0E9FF;
+    transition: 0.3s ease;
+}
+
+.date-time button:hover{
+    background-color: #89CFF3;
+    color: black;
+}
+
+.date{
+    padding-bottom: 50px;
+}
+
+/* #time{
+    width: 100%;  
+} */
+
+.date-time input{
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: #A0E9FF;
+}
+
+table{
+    width: 100%;
+    border: 2px solid black;
+    visibility: hidden;
+    margin-bottom: 20px;
+    background-color: #bbe5fa;
+}
+
+th, td{
+    border: 1px solid black;
+    padding: 10px;
+}
+
+#start-session{
+    width: 200px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 16px;
+    padding: 5px 25px;
+    border-width: 3px;
+    background-color: #A0E9FF;
+    transition: 0.3s ease;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+    visibility: hidden;
+}
+
+#start-session:hover{
+    background-color: #89CFF3;
+    color: black;
+}

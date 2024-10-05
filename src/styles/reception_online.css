@@ -1,0 +1,139 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.content{
+     align-items: center;   /* according to style.css flex-direction: column; */
+}
+
+/* ----- main div alignment ----- */
+.main {
+    display:flex;
+    width: 90%;
+}
+
+/* -------------Section 1 ------------- */
+.section1{   
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin:  20px;
+}
+
+/*--Search Reference Number--*/
+#searchId {
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    text-align: center;
+    color: black;
+    background-color: white;
+    width: 200px;
+    height:32px;
+    /* border:1px solid black; */
+    border-radius: 3px;
+    margin: 50px 0 8px 0;
+}
+.search {
+    font-size: 11px;
+    color: black;
+    background-color: white;
+    border: 1px solid #e0e0e0;
+    width: 75px;
+    height: 28px;
+    border-radius: 15px;
+    margin: 0 0 0 50px;
+}
+
+.search:hover {
+    color: #333;
+    background-color:  #e0e0e0;
+    transform: scale(1.05);
+}
+
+/* ----Patient-information---- */
+.patientInfo {
+    width: 250px;
+    margin: 20px;
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    font-size: 12px;
+    margin: 50px auto;
+    border: 2px solid black;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);      /*add glass card */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+legend {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+
+.charge, .bookingDetail, .patient{
+    height: 28px;
+    margin: 5px 0 15px 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+.buttonStyle {
+    color: #fff;
+    align-items: center;
+    margin: 25px;
+    padding: 8px 15px;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;        /*make button smooth */
+    transition: all 0.3s ease;
+}
+.buttonStyle:hover{
+    color: #333;
+    background-color:  #e0e0e0;
+    transform: scale(1.05);
+}
+
+/*----------- section 2 ------------ */
+.section2 {
+    width: 75%;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+}
+
+.Booking {
+    width: 500px;
+    margin: 50px
+}
+
+.Billing {
+    width: 300px;
+}
+.Billing label {
+    font-size: 15px;
+    margin-left: 5px;
+}
+.button {
+    display: flex;
+    flex-direction: row;
+    justify-content:center ;
+    align-items: center; 
+}
+    
+    
+    
+
+
+
+
+
