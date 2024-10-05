@@ -153,7 +153,7 @@
 
                 <form method="POST">
                     <fieldset class="patientInfo">
-                        <legend>Patient Details</Details></legend>  if(isset($_POST["search"])){}
+                        <legend>Patient Details</Details></legend>
                         <label for="">Name</label>
                         <input class="patient" type="text" name="name" value='<?php if(isset($_POST["search"])){echo $_SESSION["patFirstName"]." ".$_SESSION["patLastName"];} ?>' readonly>  
                         <label for="">Address</label>
@@ -177,16 +177,16 @@
                         <legend>Booking Details</legend>
                         
                         <label for="">Doctor</label>
-                        <input type="text" class="bookingDetail" style="background-color: #dddddd;" name="docName" id="docName" value='<?php echo $_SESSION["docFirstName"]." ".$_SESSION["docLastName"]." - ".$_SESSION["specialization"]; ?>' readonly>
+                        <input type="text" class="bookingDetail" style="background-color: #dddddd;" name="docName" id="docName" value='<?php if(isset($_POST["search"])){echo $_SESSION["docFirstName"]." ".$_SESSION["docLastName"]." - ".$_SESSION["specialization"];} ?>' readonly>
 
                         <label for="">Doctor ID</label>
-                        <input type="number" class="bookingDetail" style="background-color: #dddddd;" name="docID" id="docID" value='<?php echo $_SESSION["docID"]; ?>' readonly>
+                        <input type="number" class="bookingDetail" style="background-color: #dddddd;" name="docID" id="docID" value='<?php if(isset($_POST["search"])){echo $_SESSION["docID"];} ?>' readonly>
 
                         <label for="">Date</label>
-                        <input class="bookingDetail" id="date" type="date" value='<?php echo $_SESSION["date"]; ?>' readonly>
+                        <input class="bookingDetail" id="date" type="date" value='<?php if(isset($_POST["search"])){echo $_SESSION["date"];} ?>' readonly>
 
                         <label for="">Time</label>
-                        <input type="text" class="bookingDetail" style="background-color: #dddddd;" name="bookingTime" id="bookingTime" value='<?php echo $_SESSION["time"]; ?>' readonly>
+                        <input type="text" class="bookingDetail" style="background-color: #dddddd;" name="bookingTime" id="bookingTime" value='<?php if(isset($_POST["search"])){echo $_SESSION["time"];} ?>' readonly>
 
                         <label for="">Charge</label>
                         <input type="number" class="bookingDetail" style="background-color: #dddddd;" name="charge" id="charge" value="0" readonly>
