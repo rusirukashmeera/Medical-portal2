@@ -4,7 +4,7 @@
     $firstName = $_SESSION["firstName"];
     $lastName = $_SESSION["lastName"];
     $sql_get_apps = "SELECT C.Appointment_Id, C.First_Name AS Pat_Name, C.Age, C.Gender, U.First_Name AS Doc_Name, C.Date, C.Session_No, C.Charge
-    FROM confirm_booking C, doctor D, user_table U WHERE C.Doctor_Id = D.Doctor_Id AND D.Email = U.Email";
+    FROM confirm_booking C, doctor D, user_table U WHERE C.Doctor_Id = D.Doctor_Id AND D.Email = U.Email ORDER BY C.Appointment_Id";
     $result_get_apps = mysqli_query($conn, $sql_get_apps);
     if(isset($_POST["logout"])){
         session_unset();
@@ -44,7 +44,7 @@
         <div class="navbar" id="navbar">
             <ul class="options">
                 <li><a href="#" class="active">Manage Appointments</a></li>
-                <li><a href="#">Online Booking</a></li>
+                <li><a href="reception_online.php">Online Booking</a></li>
                 <li><a href="receptionist_offline.php">Offline Booking</a></li>
             </ul>
             <button id="signupBtn" name="signupBtn">Sign Out</button>

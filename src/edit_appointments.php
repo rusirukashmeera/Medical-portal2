@@ -70,7 +70,7 @@
                             <label for="" class="bookingLbls">Patient Name</label><br>
                             <input type="text" class="bookingVals" name="patName" value="<?php echo $e_patName; ?>" required><br><br>
                             <label for="" class="bookingLbls">Patient Age</label><br>
-                            <input type="number" class="bookingVals" name="patAge" min="1" value="<?php echo $e_age; ?>" required><br><br>
+                            <input type="number" class="bookingVals" name="patAge" min="1" max="150" value="<?php echo $e_age; ?>" required><br><br>
                             <label for="" class="bookingLbls">Patient Gender</label><br>
                             <input type="radio" name="gender" value="Male" checked><label for="" class="bookingLbls">Male</label>
                             <input type="radio" name="gender" value="Female"><label for="" class="bookingLbls">Female</label>
@@ -80,9 +80,9 @@
                         <fieldset>
                             <legend class="bookingTopics">Payment</legend>
                             <label for="" class="bookingLbls">Hospital Charge</label><br>
-                            <input type="number" class="bookingVals" value="0" id="hospCharge"><br><br>
+                            <input type="number" class="bookingVals" id="hospCharge"><br><br>
                             <label for="" class="bookingLbls">Doctor's Charge</label><br>
-                            <input type="number" class="bookingVals" value="0" id="docCharge"><br><br>
+                            <input type="number" class="bookingVals" id="docCharge"><br><br>
                         </fieldset>
                     </div>
                 </div>

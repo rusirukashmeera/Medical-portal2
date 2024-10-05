@@ -44,7 +44,7 @@
         <div class="navbar" id="navbar">
             <ul class="options">
                 <li><a href="manage_appointments.php">Manage Appointments</a></li>
-                <li><a href="#">Online Booking</a></li>
+                <li><a href="reception_online.php">Online Booking</a></li>
                 <li><a href="#" class="active">Offline Booking</a></li>
             </ul>
             <button id="signupBtn" name="signupBtn">Sign Out</button>
@@ -63,7 +63,7 @@
                             <label for="" class="bookingLbls">Patient Name</label><br>
                             <input type="text" class="bookingVals" name="patName" required><br><br>
                             <label for="" class="bookingLbls">Patient Age</label><br>
-                            <input type="number" class="bookingVals" name="patAge" min="1" required><br><br>
+                            <input type="number" class="bookingVals" name="patAge" min="1" max="150" required><br><br>
                             <label for="" class="bookingLbls">Patient Gender</label><br>
                             <input type="radio" name="gender" value="Male"><label for="" class="bookingLbls" checked>Male</label>
                             <input type="radio" name="gender" value="Female"><label for="" class="bookingLbls">Female</label>
@@ -73,9 +73,9 @@
                         <fieldset>
                             <legend class="bookingTopics">Payment</legend>
                             <label for="" class="bookingLbls">Hospital Charge</label><br>
-                            <input type="number" class="bookingVals" value="0" id="hospCharge"><br><br>
+                            <input type="number" class="bookingVals" id="hospCharge"><br><br>
                             <label for="" class="bookingLbls">Doctor's Charge</label><br>
-                            <input type="number" class="bookingVals" value="0" id="docCharge"><br><br>
+                            <input type="number" class="bookingVals" id="docCharge"><br><br>
                         </fieldset>
                     </div>
                 </div>
@@ -104,7 +104,7 @@
                         <select name="timeX" id="timeX" class="bookingVals">
                             <option value="1">7.00 AM</option>
                             <option value="2">5.00 PM</option>
-                            <option value="3">8.00 PM</option>  
+                            <option value="3">8.00 PM</option> 
                         </select><br><br>
                         <label for="" class="bookingLbls">Total Charge: </label>
                         <input type="number" class="bookingVals" id="totalCharge" name="totalCharge" value="0" style="width: 73%; background-color: #dddddd;" readonly><br><br>

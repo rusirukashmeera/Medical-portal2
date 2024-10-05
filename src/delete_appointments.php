@@ -4,13 +4,18 @@
     $firstName = $_SESSION["firstName"];
     $lastName = $_SESSION["lastName"];
     $sql_get_apps = "SELECT C.Appointment_Id, C.First_Name AS Pat_Name, C.Age, C.Gender, U.First_Name AS Doc_Name, C.Date, C.Session_No, C.Charge
-    FROM confirm_booking C, doctor D, user_table U WHERE C.Doctor_Id = D.Doctor_Id AND D.Email = U.Email";
+    FROM confirm_booking C, doctor D, user_table U WHERE C.Doctor_Id = D.Doctor_Id AND D.Email = U.Email ORDER BY C.Appointment_Id";
     $result_get_apps = mysqli_query($conn, $sql_get_apps);
     if(isset($_GET["appID"])){
         $delID = $_GET["appID"];
         $sql_delete = "DELETE FROM confirm_booking WHERE Appointment_Id = $delID";
-        mysqli_query($conn, $sql_delete);
-        header("Location: manage_appointments.php");
+        if(mysqli_query($conn, $sql_delete)){
+            echo "<script>alert('Appointment deleted successfully!');
+                setTimeout(function() {
+                    window.location.href = 'manage_appointments.php';
+                }, 1);</script>";
+        }
+        //header("Location: manage_appointments.php");
     }
 ?>
 <!DOCTYPE html>

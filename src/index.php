@@ -1,7 +1,7 @@
 <?php
     include_once("config.php");
     session_start();
-    $loginCheck = null;
+    $loginCheck = null;  //variable to store login status
     if(isset($_POST["signinHome"])){
         if(!empty($_POST["email"]) && !empty($_POST["password"])){
             $_SESSION["email"] = $_POST["email"];
@@ -9,7 +9,7 @@
             $sql = "SELECT * FROM user_table WHERE Email = '".$_SESSION["email"]."' AND Password = '".$_SESSION["password"]."'";
             $result = mysqli_query($conn, $sql);
             if(mysqli_num_rows($result) > 0){
-                $loginCheck = 1;
+                $loginCheck = 1;  //indicate user logged in
                 $row = mysqli_fetch_assoc($result);
                 $_SESSION["firstName"] = $row["First_Name"];
                 $_SESSION["lastName"] = $row["Last_Name"];
@@ -24,7 +24,7 @@
                 }
             }
             else{
-                $loginCheck = 0;
+                $loginCheck = 0;  //indicate user not logged in
             }
         }
     }
