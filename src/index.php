@@ -1,7 +1,7 @@
 <?php
     include_once("config.php");
     session_start();
-    $loginCheck = null;
+    $loginCheck = null;  //variable to store login status
     if(isset($_POST["signinHome"])){
         if(!empty($_POST["email"]) && !empty($_POST["password"])){
             $_SESSION["email"] = $_POST["email"];
@@ -9,7 +9,7 @@
             $sql = "SELECT * FROM user_table WHERE Email = '".$_SESSION["email"]."' AND Password = '".$_SESSION["password"]."'";
             $result = mysqli_query($conn, $sql);
             if(mysqli_num_rows($result) > 0){
-                $loginCheck = 1;
+                $loginCheck = 1;  //indicate user logged in
                 $row = mysqli_fetch_assoc($result);
                 $_SESSION["firstName"] = $row["First_Name"];
                 $_SESSION["lastName"] = $row["Last_Name"];
@@ -17,14 +17,14 @@
                 switch($row["Account_Type"]){
                     case "Receptionist": header("Location: manage_appointments.php");
                     break;
-                    case "Doctor": header("Location: doc-schedule.html");
+                    case "Doctor": header("Location: doc-schedule.php");
                     break;
-                    case "Patient": ;
+                    case "Patient": header("Location: channeling.php");
                     break;
                 }
             }
             else{
-                $loginCheck = 0;
+                $loginCheck = 0;  //indicate user not logged in
             }
         }
     }
@@ -61,8 +61,8 @@
             <ul class="options">
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#">Our Services</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="about_us.php">About Us</a></li>
+                <li><a href="new_contact.php">Contact Us</a></li>
                 <li><a href="#">FAQ</a></li>
             </ul>
             <button id="signupBtn">Sign Up</button>

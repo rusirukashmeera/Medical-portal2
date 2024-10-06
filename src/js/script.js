@@ -25,7 +25,6 @@ function dynamicNavbar(){
 
 let prevPos = window.scrollY;
 
-<<<<<<< HEAD
 window.addEventListener("scroll", dynamicNavbar);
 
 const signinForm = document.getElementById("signinForm");
@@ -40,8 +39,7 @@ function loginCheck(event){
         check.textContent = "email";
     }
 }
-
 signinHome.addEventListener("click", loginCheck);*/
-=======
+signinHome.addEventListener("click", loginCheck);
 window.addEventListener("scroll", dynamicNavbar);
->>>>>>> 1c19a08156ea0251a8467ecccc3387e1344c2fc8
+

@@ -24,7 +24,7 @@ function searchPatient() {
 
 // cancel the recervaton
 const cancel = document.getElementById("cancel");
-cancel.addEventListener("click", cancelReservation);
+//cancel.addEventListener("click", cancelReservation);
 
 function cancelReservation() {
     alert("Do you want to cancel the reservation?");
@@ -38,3 +38,23 @@ function confirmReservation() {
 
 
 }
+
+const charge = document.getElementById("charge");
+const HCharge = document.getElementById("HCharge");
+const DocCharge = document.getElementById("DocCharge");
+
+function calcCharge(){
+    charge.value = Number(HCharge.value) + Number(DocCharge.value);
+}
+
+HCharge.addEventListener("mouseout", calcCharge);
+DocCharge.addEventListener("mouseout", calcCharge);
+
+const signupBtn = document.getElementById("signupBtn");
+const logoutForm = document.getElementById("logoutForm");
+
+function logOut(){
+    logoutForm.submit();
+}
+
+signupBtn.addEventListener("click", logOut);

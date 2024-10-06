@@ -1,0 +1,149 @@
+
+/* Left section styles */
+.left-section {
+    /* flex: 1; Takes equal space */
+    display: flex;
+    /* flex-direction: column; Stack elements vertically */
+    /* align-items: center; Center align elements */
+    padding: 20px; /*Add some padding*/
+    width:30%;
+}
+
+
+.left-section button {
+    float:left;
+     margin-left : 10px;
+     margin-right : 0; 
+    width: 9px ;
+    padding: 15px 0; 
+}
+
+.channel,.update,.cancel{
+    width: 100px;
+    margin-left: 0;
+   
+}
+
+/* Right section styles */
+.right-section {
+   display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    padding: 20px; 
+    flex: 5; 
+    width: 60%;
+    
+}
+.channeling-container {
+    display:flex;
+    flex-direction: row;
+}
+
+.channeling-details {
+    width: 100%; 
+    max-width: 500px; 
+    max-height:fit-content;
+    background-color: rgba(255, 255, 255, 0.9); 
+    border-radius: 20px;
+    border: 2px solid #E0E0E0;
+    padding: 40px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    /* margin-left: 100px;  */
+    /* align-items: center; */
+}
+
+.channeling-details h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* Form Elements */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+form label {
+    font-size: 16px;
+    font-weight: bold;
+    margin:10px;
+}
+
+.details{
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid #CCC;
+    width: 430px;
+    font-size: 16px;
+    margin: 10px;
+}
+
+form select{
+    padding: 10px;
+    border-radius: 50px;
+    border: 1px solid #CCC;
+    width: 455px;
+    font-size: 16px;
+    margin: 10px;
+}
+
+/* Buttons */
+button.channel,
+button.cancel,
+button.edit {
+    padding: 15px 30px;
+    border-radius: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    width: 100%; 
+}
+
+button.channel {
+    background-color: #343a40;
+    color: #fff;
+    font-family:arial;
+    width: auto;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+button.channel:hover {
+    background-color: #23272b;
+}
+
+
+button.cancel {
+    background-color: #343a40;
+    color: #fff;
+    font-family:arial;
+    width: auto;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+button.cancel:hover {
+    background-color: #23272b;
+}
+
+button.edit {
+    background-color: #343a40;
+    color: #fff;
+    font-family:arial;
+    width: auto;
+    margin-left: 80px;
+    margin-right: 80px;
+}
+
+button.edit:hover {
+    background-color: #23272b;
+}
+
+.time-slot-options {
+    margin:0;
+}
+
+
