@@ -102,7 +102,7 @@ if(isset($_POST["delete"])){
         </header>   
         <div class="navbar">
             <ul class="options">
-                <li><a href="doc-schedule.html">Schedule</a></li>
+                <li><a href="doc-schedule.php">Schedule</a></li>
                 <li><a href="#" class="active">Session</a></li>
             </ul>
             <button id="signupBtn">Sign Up</button>

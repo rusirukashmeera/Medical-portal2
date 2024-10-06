@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', function () {
         // Toggle read-only state
         inputs.forEach(input => {
             if (input.tagName === 'INPUT' && input.type !== 'radio' && input.id !== "Appointment-ID" && input.id !== "doctor") {
-                input.disabled = !input.disabled; // Toggle the disabled attribute
+                input.disabled = false; // Toggle the disabled attribute
             } else if (input.tagName === 'SELECT') {
-                input.disabled = !input.disabled; // Toggle the disabled attribute
+                input.disabled = false; // Toggle the disabled attribute
             } else if (input.tagName === 'INPUT' && input.type === 'radio') {
-                input.disabled = !input.disabled; // Enable radio buttons for selection
+                input.disabled = false; // Enable radio buttons for selection
             }
         });
 

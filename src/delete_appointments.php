@@ -50,7 +50,7 @@
         <div class="navbar" id="navbar">
             <ul class="options">
                 <li><a href="#" class="active">Manage Appointments</a></li>
-                <li><a href="#">Online Booking</a></li>
+                <li><a href="reception_online.php">Online Booking</a></li>
                 <li><a href="receptionist_offline.php">Offline Booking</a></li>
             </ul>
             <button id="signupBtn" name="signupBtn">Sign Out</button>

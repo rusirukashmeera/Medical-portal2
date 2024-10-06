@@ -61,8 +61,8 @@
             <ul class="options">
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="#">Our Services</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="about_us.php">About Us</a></li>
+                <li><a href="new_contact.php">Contact Us</a></li>
                 <li><a href="#">FAQ</a></li>
             </ul>
             <button id="signupBtn">Sign Up</button>

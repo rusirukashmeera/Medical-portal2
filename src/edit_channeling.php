@@ -14,12 +14,21 @@
         $docFirstName = $row["First_Name"];
         $docLastName = $row["Last_Name"];
     }
-    if(isset($_POST["save"])){
+    if(isset($_POST["edit"])){
         $date = $_POST["date"];
         $time = $_POST["time"];
         $sql_update_booking = "UPDATE online_booking SET Date = '$date', Session_No = $time WHERE Booking_Id = $appID";
         if(mysqli_query($conn, $sql_update_booking)){
             echo "<script>alert('Channeling with booking id $appID updated successfully!');
+            setTimeout(function() {
+                    window.location.href = 'channeling.php';
+                }, 1);</script>";
+        }
+    }
+    if(isset($_POST["cancel"])){
+        $sql_delete_booking = "DELETE FROM online_booking WHERE Booking_Id = $appID";
+        if(mysqli_query($conn, $sql_delete_booking)){
+            echo "<script>alert('Channeling with booking id $appID deleted successfully!');
             setTimeout(function() {
                     window.location.href = 'channeling.php';
                 }, 1);</script>";
@@ -55,14 +64,14 @@
         </header>
         <div class="navbar">
             <ul class="options">
-                <li><a href="#">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="#">Our Services</a></li>
-                <li><a href="#">About Us</a></li>
+                <li><a href="about_us.php">About Us</a></li>
                 <li><a href="#">Contact Us</a></li>
                 <li><a href="#">FAQ</a></li>
-                <li><a href="#" class="active">Channeling</a></li>
+                <li><a href="#" class="active">Edit Channeling</a></li>
             </ul>
-            <button id="signupBtn">Sign Up</button>
+            <button id="signupBtn">Sign Out</button>
         </div>
     </div>
 
@@ -78,32 +87,31 @@
                 <div class="right-section">
                     <div class="channeling-details">
                         <h1>Channeling Details</h1>
-                        <form method="POST" style="outline-style: double; outline-width: 2px; outline-color: black;">
-                            <label for="Appointment-ID">Booking ID:</label>
-                            <input class="details" type="text" id="Appointment-ID" value='<?php echo $appID ?>' disabled>
-
-                            <label for="doctor">Doctor:</label>
-                            <input class="details" type="text" id="doctor" name="doctor" value='<?php echo $docFirstName." ".$docLastName ?>' disabled>
-
-                            <label for="Doctor-ID">Doctor ID:</label>
-                            <input class="details" type="text" id="Doctor-ID" name="Doctor-ID" value='<?php echo $docID ?>' readonly>
-
-                            <label for="date">Select Date:</label>
-                            <input class="details" type="date" id="date" name="date" value='<?php echo $date ?>' disabled>
-
-                            <label for="time-slot">Select from an Available Time Slot:</label>
-                            <div class="time-slot-options">
-                                <input type="radio" id="slot1" name="time" <?php if($time == 1){echo 'checked';} ?> value="1" disabled>
-                                <label for="slot1">7.00 AM</label>
-
-                                <input type="radio" id="slot2" name="time" <?php if($time == 2){echo 'checked';} ?> value="2" disabled>
-                                <label for="slot2">5.00 PM</label>
-
-                                <input type="radio" id="slot3" name="time" <?php if($time == 3){echo 'checked';} ?> value="3" disabled>
-                                <label for="slot3">8.00 PM</label>
-                            </div><br>
-                            <button class="edit" type="submit" name="edit">EDIT</button>
-                        </form>
+                        <div style="outline-style: double; outline-width: 2px; outline-color: black;">
+                            <form method="POST">
+                                <label for="Appointment-ID">Booking ID:</label>
+                                <input class="details" type="text" id="Appointment-ID" value='<?php echo $appID ?>' disabled>
+                                <label for="doctor">Doctor:</label>
+                                <input class="details" type="text" id="doctor" name="doctor" value='<?php echo $docFirstName." ".$docLastName ?>' disabled>
+                                <label for="Doctor-ID">Doctor ID:</label>
+                                <input class="details" type="text" id="Doctor-ID" name="Doctor-ID" value='<?php echo $docID ?>' readonly>
+                                <label for="date">Select Date:</label>
+                                <input class="details" type="date" id="date" name="date" value='<?php echo $date ?>' disabled>
+                                <label for="time-slot">Select from an Available Time Slot:</label>
+                                <div class="time-slot-options">
+                                    <input type="radio" id="slot1" name="time" <?php if($time == 1){echo 'checked';} ?> value="1" disabled>
+                                    <label for="slot1">7.00 AM</label>
+                                    <input type="radio" id="slot2" name="time" <?php if($time == 2){echo 'checked';} ?> value="2" disabled>
+                                    <label for="slot2">5.00 PM</label>
+                                    <input type="radio" id="slot3" name="time" <?php if($time == 3){echo 'checked';} ?> value="3" disabled>
+                                    <label for="slot3">8.00 PM</label>
+                                </div>
+                                <button class="edit" type="submit" name="edit">EDIT</button>
+                            </form>
+                            <form method="POST">
+                                <button class="cancel" type="submit" id="cancel" name="cancel">CANCEL</button><br>
+                            </form>
+                        </div>
                     </div>
                 </div>
             </div>

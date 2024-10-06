@@ -20,8 +20,8 @@
             <div class="profile">
                 <img class="avatar" src="images/avatar.png" alt="Generic Avatar">
                 <div class="accInfo">
-                    <label class="accName">gergregfregerhrterg</label><br>
-                    <label class="accType">Administrator</label>
+                    <label class="accName"></label><br>
+                    <label class="accType">Guest</label>
                 </div>
             </div>
         </header>

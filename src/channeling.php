@@ -61,10 +61,10 @@
         </header>
         <div class="navbar">
             <ul class="options">
-                <li><a href="#">Home</a></li>
+                <li><a href="index.php">Home</a></li>
                 <li><a href="#">Our Services</a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
+                <li><a href="about_us.php">About Us</a></li>
+                <li><a href="new_contact.php">Contact Us</a></li>
                 <li><a href="#">FAQ</a></li>
                 <li><a href="#" class="active">Channeling</a></li>
             </ul>
@@ -120,11 +120,10 @@
 
                                 <input type="radio" id="slot3" name="time" value="3">
                                 <label for="slot3">8.00 PM</label>
-                            </div><br>
+                            </div>
                             
-                            <button class="channel" id="channel" type="submit" name="channel">CHANNEL DOCTOR</button>
+                            <button class="channel" id="channel" type="submit" name="channel">CHANNEL DOCTOR</button><br>
                        
-                            <button class="cancel" type="button" id="cancel" name="cancel">CANCEL</button>
                         </form>
                     </div>
                         
