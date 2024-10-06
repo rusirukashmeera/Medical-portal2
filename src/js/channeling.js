@@ -21,3 +21,15 @@ function checkTime(event){
 
 channel.addEventListener("click", checkDate);
 channel.addEventListener("click", checkTime);
+
+const DoctorID = document.getElementById("Doctor-ID");
+const doctor = document.getElementById("doctor");
+
+function updateDocID(){
+    const fetchDocID = document.getElementById("doctor").value;
+    DoctorID.value = fetchDocID;
+}
+
+updateDocID();
+
+doctor.addEventListener("mouseout", updateDocID);

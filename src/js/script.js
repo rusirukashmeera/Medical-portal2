@@ -25,10 +25,6 @@ function dynamicNavbar(){
 
 let prevPos = window.scrollY;
 
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> b9b4418c14b99be7804ae8f772d35912ef5d283d
 window.addEventListener("scroll", dynamicNavbar);
 
 const signinForm = document.getElementById("signinForm");
@@ -43,12 +39,7 @@ function loginCheck(event){
         check.textContent = "email";
     }
 }
-
-<<<<<<< HEAD
 signinHome.addEventListener("click", loginCheck);*/
-=======
-signinHome.addEventListener("click", loginCheck);*/
-=======
+signinHome.addEventListener("click", loginCheck);
 window.addEventListener("scroll", dynamicNavbar);
->>>>>>> 1c19a08156ea0251a8467ecccc3387e1344c2fc8
->>>>>>> b9b4418c14b99be7804ae8f772d35912ef5d283d
+

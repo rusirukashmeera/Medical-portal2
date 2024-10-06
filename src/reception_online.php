@@ -116,8 +116,8 @@
             <img class="logo" src="images/logo2.png" alt="MEDPORTAL Logo">
             <div class="title">
                 <div>
-                    <h3 style="font-size: 30px; margin-bottom: 5px;">Lifeline Healthcare</h3>
-                    <h1 style="font-size: 50px; margin-top: 0;">MEDPORTAL</h1>
+                    <h3 class="title-text" style="font-size: 25px; margin-bottom: 5px;">Lifeline Healthcare</h3>
+                    <h1 class="title-text" style="font-size: 40px; margin-top: 0;">MEDPORTAL</h1>
                 </div>
             </div>
             <div class="profile">

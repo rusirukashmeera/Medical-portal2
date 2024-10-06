@@ -19,7 +19,7 @@
                     break;
                     case "Doctor": header("Location: doc-schedule.html");
                     break;
-                    case "Patient": ;
+                    case "Patient": header("Location: channeling.php");
                     break;
                 }
             }
