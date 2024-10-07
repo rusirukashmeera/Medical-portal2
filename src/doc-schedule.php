@@ -4,6 +4,13 @@ session_start();
 
 $firstName = $_SESSION["firstName"];
 $lastName = $_SESSION["lastName"];
+
+if(isset($_POST["logout"])){
+    session_unset();
+    session_destroy();
+    mysqli_close($conn);
+    header("Location: index.php");
+}
 ?>
 
 <!DOCTYPE html>
@@ -38,7 +45,10 @@ $lastName = $_SESSION["lastName"];
                 <li><a href="#"  class="active">Schedule</a></li>
                 <li><a href="doc-appoinment-ongoing.php" >Session</a></li>
             </ul>
-            <button id="signupBtn">Log Out</button>
+            <button id="signupBtn">Sign Out</button>
+            <form id="logoutForm" method="POST" action="doc-schedule.php" style="display: none;">
+                <input type="text" value="1" name="logout">
+            </form>
         </div>
     </div>
     <div class="content">
@@ -106,5 +116,6 @@ $lastName = $_SESSION["lastName"];
     </footer>
 
     <script src="../src/js/doc-schedule.js"></script>
+    <script src="js/signout.js"></script>
 </body>
 </html>

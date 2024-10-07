@@ -35,11 +35,11 @@ let limit = 50;
 
 window.addEventListener("scroll", dynamicNavbar);
 
-const signupBtn = document.getElementById("signupBtn");
-const signupForm = document.getElementById("signupForm");
+// const signupBtn = document.getElementById("signupBtn");
+// const signupForm = document.getElementById("signupForm");
 
-function signUp(){
-    signupForm.submit();
-}
+// function signUp(){
+//     signupForm.submit();
+// }
 
-signupBtn.addEventListener("click", signUp);
+// signupBtn.addEventListener("click", signUp);

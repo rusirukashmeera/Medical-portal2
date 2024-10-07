@@ -9,9 +9,9 @@
     if(isset($_POST["logout"])){
         session_unset();
         session_destroy();
+        mysqli_close($conn);
         header("Location: index.php");
     }
-    //mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -123,5 +123,6 @@
     </footer>
     <script src="js/script.js"></script>
     <script src="js/receptionist_offline.js"></script>
+    <script src="js/signout.js"></script>
 </body>
 </html>

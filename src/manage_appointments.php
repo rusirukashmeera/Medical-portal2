@@ -9,9 +9,9 @@
     if(isset($_POST["logout"])){
         session_unset();
         session_destroy();
+        mysqli_close($conn);
         header("Location: index.php");
     }
-    //mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -109,13 +109,6 @@
         <p>Lifeline Healthcare &copy; 2024. All rights reserved.</p>
     </footer>
     <script src="js/script.js"></script>
-    <script>
-        const signupBtn = document.getElementById("signupBtn");
-        const logoutForm = document.getElementById("logoutForm");
-        function logOut(){
-            logoutForm.submit();
-        }
-        signupBtn.addEventListener("click", logOut);
-    </script>
+    <script src="js/signout.js"></script>
 </body>
 </html>

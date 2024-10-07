@@ -34,10 +34,7 @@
                 <li><a href="#">Contact Us</a></li>
                 <li><a href="#">FAQ</a></li>
             </ul>
-            <!-- <button id="signupBtn">Sign Up</button>
-            <form id="signupForm" method="POST" action="signup.php" style="display: none;">
-                <input type="text" value="1" name="signup">
-            </form> -->
+            <!-- <button id="signupBtn">Sign Up</button> -->
         </div>
     </div>
     <div class="content">
