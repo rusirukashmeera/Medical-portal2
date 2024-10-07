@@ -1,15 +1,11 @@
-
+/* IT23823334 W.M.S.Methara */
 /* Left section styles */
 .left-section {
-    /* flex: 1; Takes equal space */
+     flex: 1; 
     display: flex;
-    /* flex-direction: column; Stack elements vertically */
-    /* align-items: center; Center align elements */
-    padding: 20px; /*Add some padding*/
+    padding: 20px; 
     width:30%;
 }
-
-
 .left-section button {
     float:left;
      margin-left : 10px;
@@ -32,24 +28,19 @@
     padding: 20px; 
     flex: 5; 
     width: 60%;
-    
 }
 .channeling-container {
     display:flex;
     flex-direction: row;
 }
-
 .channeling-details {
     width: 100%; 
     max-width: 500px; 
     max-height:fit-content;
-    background-color: rgba(255, 255, 255, 0.9); 
     border-radius: 20px;
     border: 2px solid #E0E0E0;
     padding: 40px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    /* margin-left: 100px;  */
-    /* align-items: center; */
+    box-shadow: 0 4px 10px rgba(0, 0, 0);
 }
 
 .channeling-details h1 {

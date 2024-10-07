@@ -1,3 +1,5 @@
+// IT23823334 W.M.S.Methara
+// Wait for the DOM content to fully load before running the script
 document.addEventListener('DOMContentLoaded', function () {
     const editButton = document.querySelector('.edit');
     const inputs = document.querySelectorAll('.details, select, input[type="radio"]');
@@ -26,14 +28,4 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
-// const DoctorID = document.getElementById("Doctor-ID");
-// const doctor = document.getElementById("doctor");
-
-// function updateDocID(){
-//     const fetchDocID = document.getElementById("doctor").value;
-//     DoctorID.value = fetchDocID;
-// }
-
-// updateDocID();
-
-// doctor.addEventListener("mouseout", updateDocID);
+;
