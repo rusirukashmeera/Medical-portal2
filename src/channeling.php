@@ -52,18 +52,13 @@
                     window.location.href = 'edit_channeling.php';
                 }, 1);</script>";
         }
-<<<<<<< HEAD
     
-    //mysqli_close($conn);
-=======
-    }
     if(isset($_POST["logout"])){
         session_unset();
         session_destroy();
         mysqli_close($conn);
         header("Location: index.php");
     }
->>>>>>> 3e4cd8320fc1a988de2fc149643fada8c1f8027e
 ?>
 
 

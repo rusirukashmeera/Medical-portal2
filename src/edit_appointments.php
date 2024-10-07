@@ -1,13 +1,22 @@
 <?php
-    include_once("config.php");
-    session_start();
+    include_once("config.php"); //establishing the database connection
+
+    session_start(); //starting the session
+
     $firstName = $_SESSION["firstName"];
-    $lastName = $_SESSION["lastName"];
+    $lastName = $_SESSION["lastName"]; // retrieving some user data from session variables
+
+    //sql query to retrieve doctor data
     $sql_doc = "SELECT U.First_Name, U.Last_Name, D.Doctor_Id, D.Specialization FROM user_table U, doctor D WHERE U.Email = D.Email";
-    $result_doc = mysqli_query($conn, $sql_doc);
+
+    $result_doc = mysqli_query($conn, $sql_doc); //storing the result after executing the sql query
+
+    //sql query to get appointment details
     $sql_get_apps = "SELECT C.Appointment_Id, C.First_Name AS Pat_Name, C.Age, C.Gender, U.First_Name AS Doc_Name, C.Date, C.Session_No, C.Charge
     FROM confirm_booking C, doctor D, user_table U WHERE C.Doctor_Id = D.Doctor_Id AND D.Email = U.Email";
-    $result_get_apps = mysqli_query($conn, $sql_get_apps);
+
+    $result_get_apps = mysqli_query($conn, $sql_get_apps); //storing the result after executing the sql query
+
     $e_appID = $_GET["appID"];
     $_SESSION["appID"] = $e_appID;
     $e_patName = $_GET["patName"];
@@ -16,13 +25,14 @@
     $e_docName = $_GET["docName"];
     $e_dateX = $_GET["dateX"];
     $e_timeX = $_GET["timeX"];
-    $e_charge = $_GET["charge"];
+    $e_charge = $_GET["charge"]; //storing GET values in local variables
+
     if(isset($_POST["logout"])){
         session_unset();
         session_destroy();
         mysqli_close($conn);
         header("Location: index.php");
-    }
+    } //logout only if logout form is submitted via js (js script gets executed on click of a button)
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -30,12 +40,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage_Appointments</title>
+
+    <!-- inserting css -->
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/manage_appointments.css">
     <link rel="stylesheet" href="styles/receptionist_offline.css">
 </head>
 <body>
     <div class="tops">
+
+        <!-- header -->
         <header class="headerX">
             <img class="logo" src="images/logo2.png" alt="MEDPORTAL Logo">
             <div class="title">
@@ -48,7 +62,7 @@
                 <img class="avatar" src="images/avatar.png" alt="Generic Avatar">
                 <div class="accInfo">
                     <label class="accName"><?php
-                        echo $firstName." ".$lastName;
+                        echo $firstName." ".$lastName; //echo logged in user's name
                     ?></label><br>
                     <label class="accType">Receptionist</label>
                 </div>
@@ -66,9 +80,11 @@
             </form>
         </div>
     </div>
+
+    <!-- main content -->
     <div class="content" id="content">
     <?php
-        echo "<center><h2>Edit Appointment - $e_appID</h2><center>";
+        echo "<center><h2>Edit Appointment - $e_appID</h2><center>"; //echo appointment number
     ?>
     <div class="offlineBookingDiv">
             <form class="offlineBooking" action="process_edit.php" method="GET">
@@ -109,7 +125,7 @@
                                         $spec = $row["Specialization"];
                                         echo "<option value=\"$docID\">$firstName $lastName - $spec</option>";
                                     }
-                                }
+                                } //display all the doctor details fetched from the database
                             ?>
                         </select><br><br>
                         <label for="" class="bookingLbls">Doctor ID</label><br>
@@ -132,9 +148,13 @@
             </form>
         </div>
     </div>
+
+    <!-- footer -->
     <footer class="footerX">
         <p>Lifeline Healthcare &copy; 2024. All rights reserved.</p>
     </footer>
+
+    <!-- inserting javascript -->
     <script src="js/script.js"></script>
     <script src="js/receptionist_offline.js"></script>
     <script src="js/signout.js"></script>
