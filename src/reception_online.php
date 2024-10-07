@@ -1,15 +1,28 @@
+<!-- IT23840782  W.M.D.N.Weerakoon  -->
+
 <?php
+    //  connection with database
     include_once("config.php");
+
+    // Start the session
     session_start();
+
+    // user's first and last name from the session
     $firstName = $_SESSION["firstName"];
     $lastName = $_SESSION["lastName"];
+
+    // logout from the session redirect to the index.php
     if(isset($_POST["logout"])){
         session_unset();
         session_destroy();
         header("Location: index.php");
     }
+
+    // SQL query to fetch doctor details (first name, last name, doctor ID, specialization)
     $sql_doc = "SELECT U.First_Name, U.Last_Name, D.Doctor_Id, D.Specialization FROM user_table U, doctor D WHERE U.Email = D.Email";
     $result_doc = mysqli_query($conn, $sql_doc);
+
+    // Initialize session variables
     if(!isset($_SESSION["searchId"])){$_SESSION["searchId"] = "";}
     if(!isset($_SESSION["bookingID"])){$_SESSION["bookingID"] = "";}
     if(!isset($_SESSION["patID"])){$_SESSION["patID"] = "";}
@@ -25,9 +38,13 @@
     if(!isset($_SESSION["docLastName"])){$_SESSION["docLastName"] = "";}
     if(!isset($_SESSION["specialization"])){$_SESSION["specialization"] = "";}
     if(!isset($_SESSION["time"])){$_SESSION["time"] = "";}
+
+    //Fetch patient and booking details based on search ID (Booking ID)
     if(isset($_POST["search"])){
         $bookingID = $_POST["searchId"];
         $_SESSION["searchId"] = $bookingID;
+
+        // If booking ID is not empty, fetch relevant booking and patient information
         if(!empty($bookingID)){
             $sql_get_patient = "SELECT O.Booking_Id, O.Patient_Id, O.Doctor_Id, O.Date, O.Session_No, P.Gender, P.Address, U.First_Name,
             U.Last_Name, U.Contact_No FROM online_booking O, patient P, user_table U WHERE O.Patient_Id = P.Patient_Id AND P.Email = U.Email AND O.Booking_Id = $bookingID";
@@ -44,7 +61,7 @@
                 $patFirstName = $_SESSION["patFirstName"] = $row["First_Name"];
                 $patLastName = $_SESSION["patLastName"] = $row["Last_Name"];
                 $contactNo = $_SESSION["contactNo"] = $row["Contact_No"];
-                switch($_SESSION["sessionNo"]){
+                switch($_SESSION["sessionNo"]){     // time based on session number (morning, evening, night)
                     case 1:
                         $_SESSION["time"] = "7.00 AM";
                         break;
@@ -55,9 +72,11 @@
                         $_SESSION["time"] = "8.00 PM";
                         break;
                 }
+
+                // Fetch doctor details based on the doctor ID
                 $sql_get_doc = "SELECT U.First_Name, U.Last_Name, D.Specialization FROM doctor D, user_table U WHERE D.Email = U.Email AND D.Doctor_Id = $docID";
                 $result_get_doc = mysqli_query($conn, $sql_get_doc);
-                if(mysqli_num_rows($result_get_doc) > 0){
+                if(mysqli_num_rows($result_get_doc) > 0){          // If doctor details are found, store them in session variables
                     $row = mysqli_fetch_assoc($result_get_doc);
                     $_SESSION["docFirstName"] = $row["First_Name"];
                     $_SESSION["docLastName"] = $row["Last_Name"];
@@ -73,14 +92,18 @@
             $row2 = mysqli_fetch_assoc($result_get_age);
             $age = $_SESSION["age"] = $row2["Age"];
         }
+
+        // Get the charge from the form and store it in session
         $charge = $_POST["charge"];
         $_SESSION["charge"] = $charge;
+
+        // SQL for insert confirmed booking details
         $sql_confirm = "INSERT INTO confirm_booking (Patient_Id, First_Name, Age, Gender, Doctor_Id, Date, Session_No, Type, Charge)
         VALUES (" . $_SESSION["patID"] . ", '" . $_SESSION["patFirstName"] . "', $age, '" . $_SESSION["gender"] . "', " . $_SESSION["docID"] . ", '" . $_SESSION["date"] . "', " . $_SESSION["sessionNo"] . ", 'Online', $charge)";
         $patID = $_SESSION["patID"];
         $bookingID = $_SESSION["bookingID"];
         $sql_delete_booking = "DELETE FROM online_booking WHERE Booking_Id = $bookingID";
-        if(mysqli_query($conn, $sql_confirm)){
+        if(mysqli_query($conn, $sql_confirm)){         // If the booking is confirmed, delete the online booking and display a success message  
             mysqli_query($conn, $sql_delete_booking);
             echo "<script>alert('Appointment confirmed successfully!');
                 setTimeout(function() {
@@ -88,6 +111,7 @@
                 }, 1);</script>";
         }
     }
+    //delete the booking and show a cancellation message
     if(isset($_POST["cancel"]) && !empty($_SESSION["bookingID"])){
         $bookingID = $_SESSION["bookingID"];
         $sql_delete_booking = "DELETE FROM online_booking WHERE Booking_Id = $bookingID";
@@ -98,9 +122,11 @@
                 }, 1);</script>";
         }
     }
+    // Edit booking: redirect to the edit page
     if(isset($_POST["edit"]) && !empty($_SESSION["bookingID"])){
         header("Location: edit_online.php");
     }
+    //unset session, close the connection, and redirect to index.php
     if(isset($_POST["logout"])){
         session_unset();
         session_destroy();
@@ -108,6 +134,7 @@
         header("Location: index.php");
     }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -151,17 +178,18 @@
 
         <div class="main">
             <div class="section1">
-                
+                <!-- Search booking id  -->
                 <form action="#" method="POST">
                     <input type="search" id="searchId" name="searchId" placeholder="Enter Reference Number">
                     <button class="search" type="submit" name="search" onclick="searchPatient();" >Search</button>
                 </form>
 
+                <!-- Patient Personal details  -->
                 <form method="POST">
                     <fieldset class="patientInfo">
                         <legend>Patient Details</Details></legend>
                         <label for="">Name</label>
-                        <input class="patient" type="text" name="name" value='<?php if(isset($_POST["search"])){echo $_SESSION["patFirstName"]." ".$_SESSION["patLastName"];} ?>' readonly>  
+                        <input class="patient" type="text" name="name" value='<?php if(isset($_POST["search"])){echo $_SESSION["patFirstName"]." ".$_SESSION["patLastName"];} ?>' readonly>  <!--This concatenates the first and last name with a space in between-->
                         <label for="">Address</label>
                         <input class="patient" type="text" name="address" value='<?php if(isset($_POST["search"])){echo $_SESSION["address"];} ?>' readonly>
                         <label for="">Phone No</label>
@@ -174,10 +202,10 @@
                         </label>
                     </fieldset>
                 </form>
-                
             </div>
 
             <div class="section2">
+                <!-- Patient doctor channelling details -->
                 <form action="#" method="POST">
                     <fieldset class="Booking">
                         <legend>Booking Details <?php if(!empty($bookingID)){echo " ".$bookingID;} ?></legend>
@@ -205,6 +233,8 @@
                         
                     </fieldset>
                 </form>
+
+                <!-- patient payment details -->
                 <form >
                     <fieldset class="Billing">
                         <legend>Payment</legend>

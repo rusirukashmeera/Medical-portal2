@@ -1,9 +1,12 @@
+/* IT23840782  W.M.D.N.Weerakoon */
+
 body{
     font-family: sans-serif;
     margin: 0;
     padding: 0;
 }
 
+/* --------Our Story------------ */
 .banner {
     display: flex;
     width: 100%;
@@ -19,7 +22,7 @@ body{
     border: 1px solid #002b4c;
     background-color: #002b4c;
 }
-.story:hover{
+.story:hover{    /* changes style when cursor goes over the element*/
     color: white;
     border: 1px solid rgb(44, 62, 80);
     background-color: rgb(44, 62, 80);
@@ -30,7 +33,7 @@ body{
     margin-bottom : 5px;
 }
 
-
+/* ------------Vission & Mission---------- */
 .details {
     display: flex;
     justify-content: center;
@@ -43,16 +46,16 @@ body{
 }
 
 h4 {
-    margin: 5px 0 5px 0 ;
-    
+    margin: 5px 0 5px 0;
 }
 .sub-details{
     margin-right: 10px;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    justify-content: center;  /* align content horizontally */
+    align-items: center;  /* align item vertically  */
 }
 
+/* -------------Our Values------------- */
 #ourValues {
     text-align: center;
     margin: 30px 0 0;
@@ -61,7 +64,7 @@ h4 {
 .Values {
     display: flex;
     justify-content: center;
-    gap: 55px;
+    gap: 55px;   /* gap between mission and vission */
     margin-top: 20px;
 }
 
