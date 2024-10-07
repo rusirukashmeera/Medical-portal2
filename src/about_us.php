@@ -46,11 +46,11 @@
             <div class="story">
                 <h2>Our Story</h2>
                 <p> Driven by a passion for innovation and a commitment to patient
-                    well-being, we launched<br> Lifeline Healthcare Medportal, bringing
-                    together a team of experienced doctors, specialists,<br> and healthcare
+                    well-being, we launched Lifeline <br> Healthcare Medportal, bringing
+                    together a team of experienced doctors, specialists, and healthcare<br>
                     providers who share our vision. From telemedicine consultations
                     to health management tools, our platform is designed to
-                    empower individuals to take control of their<br> health with ease and confidence.
+                    empower individuals to take control of their health with ease and confidence.
                 </p>
             </div>
 
@@ -91,16 +91,11 @@
         <div class="Values">
 
             <div class="value1">
-                
-                <fieldset> 
-                    <legend><i class=""></i></legend>
                     <p>Lorem ipsum dolor sit amet,
                         consectetur adipiscing elit,
                         sed do eiusmod tempor incididunt
                         ut labore et dolore magna aliqua.
                     </p>
-                </fieldset>
-                
             </div>
 
             <div class="value2">
