@@ -14,40 +14,32 @@ function showNavbar(){
 
 function dynamicNavbar(){
     let currentPos = window.scrollY;
-    if(prevPos > currentPos){
-        showNavbar();
+    
+    if(currentPos > limit){
+        if(prevPos > currentPos){
+            showNavbar();
+        }
+        else{
+            hideNavbar();
+        }
     }
     else{
-        hideNavbar();
+        showNavbar();
     }
+
     prevPos = currentPos;
 }
 
 let prevPos = window.scrollY;
+let limit = 50;
 
 window.addEventListener("scroll", dynamicNavbar);
 
-// const signinForm = document.getElementById("signinForm");
-// const check = document.getElementById("check");
-// const email = document.getElementById("email");
-// const password = document.getElementById("password");
-// const signinHome = document.getElementById("signinHome");
-/*
-function loginCheck(event){
-    if(email.value == ""){
-        event.preventDefault();
-        check.textContent = "email";
-    }
-}
-signinHome.addEventListener("click", loginCheck);*/
+// const signupBtn = document.getElementById("signupBtn");
+// const signupForm = document.getElementById("signupForm");
 
-window.addEventListener("scroll", dynamicNavbar);
+// function signUp(){
+//     signupForm.submit();
+// }
 
-const signupBtn = document.getElementById("signupBtn");
-const signupForm = document.getElementById("signupForm");
-
-function signUp(){
-    signupForm.submit();
-}
-
-signupBtn.addEventListener("click", signUp);
+// signupBtn.addEventListener("click", signUp);

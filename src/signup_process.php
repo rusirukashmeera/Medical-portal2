@@ -41,14 +41,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (strlen($password) < 4) {
-        $errors[] = "Password must be at least 8 characters long.";
+        $errors[] = "Password must be at least 4 characters long.";
     }
 
     if (empty($errors)) {
-        // Hash the password
-        //password hars is a built-in function to encrypt the password. This can be removed. not required.
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-
         // Insert user data into the database
         $sql = "INSERT INTO user_table (First_Name, Last_Name, Email, Contact_No, Password, NIC, Account_Type) 
                 VALUES (?, ?, ?, ?, ?, ?, ?)"; 

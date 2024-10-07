@@ -45,6 +45,12 @@
                     }, 1);</script>";
         }
     }
+    if(isset($_POST["logout"])){
+        session_unset();
+        session_destroy();
+        mysqli_close($conn);
+        header("Location: index.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -76,12 +82,15 @@
         <div class="navbar" id="navbar">
             <ul class="options">
                 <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Our Services</a></li>
+                <li><a href="our_services.php">Our Services</a></li>
                 <li><a href="about_us.php">About Us</a></li>
                 <li><a href="new_contact.php">Contact Us</a></li>
-                <li><a href="#">FAQ</a></li>
+                <li><a href="faq.php">FAQ</a></li>
             </ul>
             <button id="signupBtn">Sign Out</button>
+            <form id="logoutForm" method="POST" action="edit_profile.php" style="display: none;">
+                <input type="text" value="1" name="logout">
+            </form>
         </div>
     </div>
     <div class="content" id="content">
@@ -122,5 +131,6 @@
     </footer>
     <script src="js/script.js"></script>
     <script src="js/home.js"></script>
+    <script src="js/signout.js"></script>
 </body>
 </html>

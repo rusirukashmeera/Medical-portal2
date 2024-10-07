@@ -6,7 +6,11 @@ const hospCharge = document.getElementById("hospCharge");
 //function for calculate docCharge and hospCharge
 function calcTotal(){
     let totalCharge = Number(docCharge.value) + Number(hospCharge.value);
+<<<<<<< HEAD
     document.getElementById("totalCharge").value = totalCharge;   //read total value from totalCharge
+=======
+    document.getElementById("totalCharge").value = totalCharge;
+>>>>>>> 50a4e0f94b00bfdd6ebc156340ed723a95682b0a
     //console.log(totalCharge);
 }
  

@@ -18,6 +18,12 @@
                 }, 1);</script>";
         }
     }
+    if(isset($_POST["logout"])){
+        session_unset();
+        session_destroy();
+        mysqli_close($conn);
+        header("Location: index.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -52,8 +58,10 @@
                 <li><a href="#" class="active">Online Booking</a></li>
                 <li><a href="receptionist_offline.php">Offline Booking</a></li>
             </ul>
-            <button id="signupBtn">Sign Up</button>
-
+            <button id="signupBtn">Sign Out</button>
+            <form id="logoutForm" method="POST" action="edit_online.php" style="display: none;">
+                <input type="text" value="1" name="logout">
+            </form>
         </div>
     </div>
     <div class="content">
@@ -121,5 +129,6 @@
         <p>Lifeline Healthcare &copy; 2024. All rights reserved.</p>
     </footer>
     <script src="js/receptionist_online.js"></script>
+    <script src="js/signout.js"></script>
 </body>
 </html>

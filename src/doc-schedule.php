@@ -1,3 +1,18 @@
+<?php
+include_once ("config.php");
+session_start();
+
+$firstName = $_SESSION["firstName"];
+$lastName = $_SESSION["lastName"];
+
+if(isset($_POST["logout"])){
+    session_unset();
+    session_destroy();
+    mysqli_close($conn);
+    header("Location: index.php");
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +35,7 @@
             <div class="profile">
                 <img class="avatar" src="images/avatar.png" alt="Generic Avatar">
                 <div class="accInfo">
-                    <label class="accName">doc_name</label><br>
+                    <label class="accName"><?php echo $firstName." ".$lastName ?></label><br>
                     <label class="accType">Doctor</label>
                 </div>
             </div>
@@ -30,7 +45,10 @@
                 <li><a href="#"  class="active">Schedule</a></li>
                 <li><a href="doc-appoinment-ongoing.php" >Session</a></li>
             </ul>
-            <button id="signupBtn">Log Out</button>
+            <button id="signupBtn">Sign Out</button>
+            <form id="logoutForm" method="POST" action="doc-schedule.php" style="display: none;">
+                <input type="text" value="1" name="logout">
+            </form>
         </div>
     </div>
     <div class="content">
@@ -64,23 +82,28 @@
     </tr>
 
     <?php
+
     include_once("config.php");
-    // Fetch data from confirm_booking table
-    $sql = "SELECT Appointment_Id, First_name, Date FROM confirm_booking";
-    $result = $conn->query($sql);
 
-    if ($result->num_rows > 0) {
-        while($row = $result->fetch_assoc()) {
-            echo "<tr>";
-            echo "<td>" . $row["Appointment_Id"] . "</td>";
-            echo "<td>" . $row["First_name"] . "</td>";
-            echo "<td>" . $row["Date"] . "</td>";
-            echo "</tr>";
+    if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['date'])) {
+        $date = $_POST['date'];
+    
+        // Fetch data from confirm_booking table
+        $sql = "SELECT Appointment_Id, First_name, Date FROM confirm_booking WHERE Date = '$date'";
+        $result = $conn->query($sql);
+
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $row["Appointment_Id"] . "</td>";
+                echo "<td>" . $row["First_name"] . "</td>";
+                echo "<td>" . $row["Date"] . "</td>";
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='4'>No bookings found</td></tr>";
         }
-    } else {
-        echo "<tr><td colspan='4'>No bookings found</td></tr>";
     }
-
     $conn->close();
     ?>
 </table>
@@ -93,5 +116,6 @@
     </footer>
 
     <script src="../src/js/doc-schedule.js"></script>
+    <script src="js/signout.js"></script>
 </body>
 </html>
