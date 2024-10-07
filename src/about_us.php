@@ -1,3 +1,5 @@
+<!-- IT23840782  W.M.D.N.Weerakoon  -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +8,6 @@
     <title>MEDPORTAL</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/about_us.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="tops">
@@ -28,22 +29,19 @@
         </header>
         <div class="navbar">
             <ul class="options">
-                <li><a href="#" >Home</a></li>
-                <li><a href="#" >Our Services</a></li>
+                <li><a href="index.php" >Home</a></li>
+                <li><a href="our_services.php" >Our Services</a></li>
                 <li><a href="#" class="active">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">FAQ</a></li>
+                <li><a href="new_contact.php">Contact Us</a></li>
+                <li><a href="faq.php">FAQ</a></li>
             </ul>
-            <!-- <button id="signupBtn">Sign Up</button>
-            <form id="signupForm" method="POST" action="signup.php" style="display: none;">
-                <input type="text" value="1" name="signup">
-            </form> -->
+            <!-- <button id="signupBtn">Sign Up</button> -->
         </div>
     </div>
+    
     <div class="content">
-        
+        <!-- Our Story  -->
         <div class="banner">
-
             <img src="images/Our story.jpg" width="350" height="245" alt="Our story">
 
             <div class="story">
@@ -58,7 +56,7 @@
             </div>
 
         </div>
-        
+        <!-- Vission & Mission -->
         <div class="details">
             <div class="Vision">
                 <h4>Our Vision</h4>
@@ -89,10 +87,9 @@
             </div>
         </div>
         
+        <!-- Our Values -->
         <h4 id="ourValues" >Our Values</h4>
-
         <div class="Values">
-
             <div class="value1">
                     <p>Lorem ipsum dolor sit amet,
                         consectetur adipiscing elit,
@@ -116,10 +113,9 @@
                     ut labore et dolore magna aliqua.
                 </p>
             </div>
-
         </div>
+    </div>  
 
-    </div>                  
     <footer class="footerX">
         <p>Lifeline Healthcare &copy; 2024. All rights reserved.</p>
     </footer>

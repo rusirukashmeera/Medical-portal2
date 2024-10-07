@@ -17,7 +17,12 @@
         }
         //header("Location: manage_appointments.php");
     }
-    //mysqli_close($conn);
+    if(isset($_POST["logout"])){
+        session_unset();
+        session_destroy();
+        mysqli_close($conn);
+        header("Location: index.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,7 +60,7 @@
                 <li><a href="receptionist_offline.php">Offline Booking</a></li>
             </ul>
             <button id="signupBtn" name="signupBtn">Sign Out</button>
-            <form id="logoutForm" method="POST" action="receptionist_offline.php" style="display: none;">
+            <form id="logoutForm" method="POST" action="#" style="display: none;">
                 <input type="text" value="1" name="logout">
             </form>
         </div>
@@ -115,5 +120,6 @@
     </footer>
     <script src="js/script.js"></script>
     <script src="js/receptionist_offline.js"></script>
+    <script src="js/signout.js"></script>
 </body>
 </html>

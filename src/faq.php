@@ -27,11 +27,11 @@
         </header>
         <div class="navbar" id="navbar">
             <ul class="options">
-                <li><a href="#" class="active">Home</a></li>
-                <li><a href="#">Our Services</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="our_services.php">Our Services</a></li>
                 <li><a href="about_us.php">About Us</a></li>
                 <li><a href="new_contact.php">Contact Us</a></li>
-                <li><a href="#">FAQ</a></li>
+                <li><a href="#" class="active">FAQ</a></li>
             </ul>
             <!-- <button id="signupBtn">Sign Up</button> -->
         </div>
@@ -41,33 +41,53 @@
             <center><h1>Frequently Asked Questions (FAQ)</h1><center>
         </div>
         <div class="faq-section">
-            <div class="faq-item">
-                <h2>What is your return policy</h2>
-                <p>Our return policy allows you to return items within 30 days of purchase. Items must be unused and in their original packaging.</p>
-            </div>
-
-            <div class="faq-item">
-                <h2>How long does shipping take?</h2>
-                <p>Shipping usually takes between 5-7 business days depending on your location. Expedited shipping options are available at checkout.</p>
-            </div>
-
-            <div class="faq-item">
-                <h2>Do you ship internationally?</h2>
-                <p>Yes, we offer international shipping to most countries. Additional shipping charges may apply.</p>
-            </div>
-
-            <div class="faq-item">
-                <h2>How can I track my order?</h2>
-                <p>Once your order is shipped, we will send you a tracking number via email, which you can use to track your order on our website.</p>
-            </div>
-
-            <!-- Add more FAQs as needed -->
+        <button class="faq-question">What is your return policy?</button>
+        <div class="faq-answer">
+            <p>Our return policy allows you to return items within 30 days of purchase. Items must be unused and in their original packaging.</p>
         </div>
+    </div>
+
+    <div class="faq-section">
+        <button class="faq-question">How long does shipping take?</button>
+        <div class="faq-answer">
+            <p>Shipping usually takes between 5-7 business days depending on your location. Expedited shipping options are available at checkout.</p>
+        </div>
+    </div>  
+
+    <div class="faq-section">
+        <button class="faq-question">Do you ship internationally?</button>
+        <div class="faq-answer">
+            <p>Yes, we offer international shipping to most countries. Additional shipping charges may apply.</p>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <button class="faq-question">How can I track my order?</button>
+        <div class="faq-answer">
+            <p>Once your order is shipped, we will send you a tracking number via email, which you can use to track your order on our website.</p>
+        </div>
+    </div>
     </div>
     <footer class="footerX">
         <p>Lifeline Healthcare &copy; 2024. All rights reserved.</p>
     </footer>
     <script src="js/script.js"></script>
     <script src="js/home.js"></script>
+
+    <script>
+    document.querySelectorAll('.faq-question').forEach(button => {
+        button.addEventListener('click', () => {
+            const answer = button.nextElementSibling;
+
+            button.classList.toggle('active');
+
+            if (answer.style.display === 'block') {
+                answer.style.display = 'none';
+            } else {
+                answer.style.display = 'block';
+            }
+        });
+    });
+    </script>
 </body>
 </html>
