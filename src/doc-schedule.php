@@ -1,3 +1,11 @@
+<?php
+include_once ("config.php");
+session_start();
+
+$firstName = $_SESSION["firstName"];
+$lastName = $_SESSION["lastName"];
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,7 +28,7 @@
             <div class="profile">
                 <img class="avatar" src="images/avatar.png" alt="Generic Avatar">
                 <div class="accInfo">
-                    <label class="accName">doc_name</label><br>
+                    <label class="accName"><?php echo $firstName." ".$lastName ?></label><br>
                     <label class="accType">Doctor</label>
                 </div>
             </div>
@@ -66,7 +74,7 @@
     <?php
 
     include_once("config.php");
-    
+
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['date'])) {
         $date = $_POST['date'];
     
