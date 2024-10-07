@@ -35,7 +35,7 @@
     </div>
     <div class="content">
         <div class="schedule-date-time">
-            <form action="" class="date-time">
+            <form action="" class="date-time" id="date-time" method="POST">
 
                 <div class="date">
                     <label for="date">Date:</label><br>
@@ -49,22 +49,41 @@
                     <input type="radio" id="time" name="session" >Session 3<br><br>
                 </div>
 
-                <button class="submit" id="submit">Search</button>
+                <button class="submit" id="submit" type="submit">Search</button>
             </form>
 
             
             
         </div>
 
-        <table id = "schedule-table">
-            <tr>
-                <th>PatientID</th>
-                <th>Patient Name</th>
-                <th>Start Time</th>
-                <th>Date</th>
-            </tr>
+        <table id="schedule-table">
+    <tr>
+        <th>AppoinmentID</th>
+        <th>Patient Name</th>
+        <th>Date</th>
+    </tr>
 
-        </table>
+    <?php
+    include_once("config.php");
+    // Fetch data from confirm_booking table
+    $sql = "SELECT Appointment_Id, First_name, Date FROM confirm_booking";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        while($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $row["Appointment_Id"] . "</td>";
+            echo "<td>" . $row["First_name"] . "</td>";
+            echo "<td>" . $row["Date"] . "</td>";
+            echo "</tr>";
+        }
+    } else {
+        echo "<tr><td colspan='4'>No bookings found</td></tr>";
+    }
+
+    $conn->close();
+    ?>
+</table>
 
         <a href="doc-appoinment-ongoing.php" target="_blank"><button id="start-session">Start Session</button></a>
 

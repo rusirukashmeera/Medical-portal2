@@ -6,6 +6,7 @@
     <title>MEDPORTAL</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/about_us.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="tops">
@@ -44,12 +45,12 @@
 
             <div class="story">
                 <h2>Our Story</h2>
-                <p> Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod 
-                    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, 
-                    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo 
-                    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse 
-                    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat 
-                    non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                <p> Driven by a passion for innovation and a commitment to patient
+                    well-being, we launched<br> Lifeline Healthcare Medportal, bringing
+                    together a team of experienced doctors, specialists,<br> and healthcare
+                    providers who share our vision. From telemedicine consultations
+                    to health management tools, our platform is designed to
+                    empower individuals to take control of their<br> health with ease and confidence.
                 </p>
             </div>
 
@@ -59,23 +60,28 @@
             <div class="Vision">
                 <h4>Our Vision</h4>
                 
-                <p class="sub-details"> Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit,
-                    sed do eiusmod.
+                <p class="sub-details"> We envision a future where
+                    healthcare is more connected, empowering
+                    individuals to manage their health with
+                    greater ease, and where innovation continuously
+                    enhances the patient experience. By fostering
+                    a culture of excellence, compassion, and
+                    inclusivity, we aim to redefine healthcare
+                    delivery for a healthier tomorrow.
                 </p>
             </div>
 
             <div class="Mision">
                 <h4>Our Mission</h4>
-                <p class="sub-details"> Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua.Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit,
-                    sed do eiusmod.
+                <p class="sub-details"> At Lifeline Healthcare,
+                    our mission is to revolutionize healthcare
+                    by providing accessible, convenient, and
+                    high-quality medical services to everyone.
+                    We are committed to bridging the gap between
+                    patients and healthcare providers through
+                    innovative technology, ensuring that no
+                    matter where you are, expert care is
+                    just a click away.
                 </p>
             </div>
         </div>
@@ -84,7 +90,20 @@
 
         <div class="Values">
 
-            <div>
+            <div class="value1">
+                
+                <fieldset> 
+                    <legend><i class=""></i></legend>
+                    <p>Lorem ipsum dolor sit amet,
+                        consectetur adipiscing elit,
+                        sed do eiusmod tempor incididunt
+                        ut labore et dolore magna aliqua.
+                    </p>
+                </fieldset>
+                
+            </div>
+
+            <div class="value2">
                 <p>Lorem ipsum dolor sit amet,
                     consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt
@@ -92,15 +111,7 @@
                 </p>
             </div>
 
-            <div>
-                <p>Lorem ipsum dolor sit amet,
-                    consectetur adipiscing elit,
-                    sed do eiusmod tempor incididunt
-                    ut labore et dolore magna aliqua.
-                </p>
-            </div>
-
-            <div>
+            <div class="value3">
                 <p>Lorem ipsum dolor sit amet,
                     consectetur adipiscing elit,
                     sed do eiusmod tempor incididunt

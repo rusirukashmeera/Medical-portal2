@@ -12,15 +12,17 @@ body{
 }
 
 .story {
-    color:white;
+    color:black;
     padding: 10px 20px;
     width: 45rem;
     height : 14rem; 
-    border: 1px solid rgb(44, 62, 80);
-    background-color: rgb(44, 62, 80);
+    border: 1px solid   #99a3a4;
+    background-color:   #99a3a4;
 }
 .story:hover{
-    background-color: gray;
+    color: white;
+    border: 1px solid rgb(44, 62, 80);
+    background-color: rgb(44, 62, 80);
 }
 
 .story h2 {
@@ -39,6 +41,14 @@ body{
 .details div {
     width: 34%;
 }
+
+/* .Vision, .Mision, .value1, .value2, .value3{
+    border: 1px solid black;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+} */
+
+
 
 h4 {
     margin: 5px 0 5px 0 ;
@@ -64,7 +74,7 @@ h4 {
 }
 
 .Values div {
-    width: 21%;
+    /* width: 21%; */
     margin-bottom: 2%;
     
 }
@@ -72,6 +82,13 @@ h4 {
 .Values p {
     margin: 0;
     line-height: 1.6;
+}
+
+.value1, .value2, .value3 {
+    border:1px solid rgb(97, 37, 158);
+    background-color: rgb(97, 37, 158);
+    padding: 20px;
+    width: 150px;
 }
 
 

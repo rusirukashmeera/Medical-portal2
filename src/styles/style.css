@@ -15,7 +15,7 @@ header.headerX {
     position: relative;
     background-color: #002b4c;
     height: 90px;
-    margin: 0;
+    margin: 0; 
 }
 
 .tops{
@@ -55,10 +55,6 @@ footer.footerX{
 .accInfo{
     padding-left: 5px;
     margin-top: 40px;
-    width: 40px;
-    font-weight: bold;
-    width: 40px;
-    font-weight: bold;
     width: 120px;
     font-weight: bold;
     color: #888888;
@@ -131,7 +127,7 @@ ul.options li a:hover {
 }
 
 .active{
-    background-color: #2fa6f3;
+    background-color: #2fa6f3;  
 }
 
 #signupBtn{
