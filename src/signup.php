@@ -17,7 +17,7 @@
                     <h1 class="title-text" style="font-size: 40px; margin-top: 0;">MEDPORTAL</h1>
                 </div>
             </div>
-            <div class="profile">
+            <div class="profile"><!-- User profile section -->
                 <img class="avatar" src="images/avatar.png" alt="Generic Avatar">
                 <div class="accInfo">
                     <label class="accName"></label><br>
@@ -25,7 +25,7 @@
                 </div>
             </div>
         </header>
-        <div class="navbar" id="navbar">
+        <div class="navbar" id="navbar"> <!-- Navigation bar -->
             <ul class="options">
                 <li><a href="#" class="active">Home</a></li>
                 <li><a href="our_services.php">Our Services</a></li>
@@ -39,7 +39,7 @@
         </div>
     </div>
     <div class="content" id="content">
-        <div class="form-container">
+        <div class="form-container"><!-- Container for the sign-up form -->
             <form id="signupForm" action="signup_process.php" method="POST">
                 <label for="firstName">First Name</label><br>
                 <input type="text" id="firstName" name="first_name" placeholder="Value" required><br>
@@ -83,6 +83,8 @@
             </form>
         </div>
     </div>
+
+    <!-- Footer section -->
     <footer class="footerX">
         <p>Lifeline Healthcare &copy; 2024. All rights reserved.</p>
     </footer>
