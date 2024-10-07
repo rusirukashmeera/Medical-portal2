@@ -4,6 +4,16 @@ session_start();
 
 $firstName = $_SESSION["firstName"];
 $lastName = $_SESSION["lastName"];
+$email = $_SESSION["email"];
+
+$sql2 = "SELECT Doctor_Id FROM doctor WHERE Email = '$email'";
+
+$result2 = mysqli_query($conn, $sql2);
+
+if (mysqli_num_rows($result2) > 0) {
+    $row2 = mysqli_fetch_assoc($result2);
+    $docID = $row2["Doctor_Id"];
+}
 
 if(isset($_POST["logout"])){
     session_unset();
@@ -62,9 +72,9 @@ if(isset($_POST["logout"])){
 
                 <div class="time">
                     <label for="time">Select the Session:</label><br><br>
-                    <input type="radio" id="time" name="session" >Session 1<br><br>
-                    <input type="radio" id="time" name="session" >Session 2<br><br>
-                    <input type="radio" id="time" name="session" >Session 3<br><br>
+                    <input type="radio" id="time" name="session" value = "1">Session 1<br><br>
+                    <input type="radio" id="time" name="session" value = "2">Session 2<br><br>
+                    <input type="radio" id="time" name="session" value = "3">Session 3<br><br>
                 </div>
 
                 <button class="submit" id="submit" type="submit">Search</button>
@@ -87,9 +97,11 @@ if(isset($_POST["logout"])){
 
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['date'])) {
         $date = $_POST['date'];
+        $session = $_POST['session'];
+
     
         // Fetch data from confirm_booking table
-        $sql = "SELECT Appointment_Id, First_name, Date FROM confirm_booking WHERE Date = '$date'";
+        $sql = "SELECT Appointment_Id, First_name, Date FROM confirm_booking WHERE Date = '$date' AND Session_No = '$session' AND Doctor_Id = '$docID'";
         $result = $conn->query($sql);
 
         if ($result->num_rows > 0) {
