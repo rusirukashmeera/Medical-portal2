@@ -6,12 +6,12 @@
 
 
 .ongoing-box {
-  border: 1px groove black;
-  border-radius: 5px;
+  border: 3px ridge black;
+  border-radius: 7px;
   width: 90%; 
   height: 100%;
   margin-bottom: 20px;
-  background-color: #bbe5fa ;
+  background-color: #91DDCF ;
   margin-top: 160px;
   overflow: auto;
 }
@@ -21,16 +21,18 @@
 }
 
 .session-details fieldset{
-  border: 1px solid black;
-  border-radius: 5px;
+  border: 3px ridge black;
+  border-radius: 7px;
   padding: 10px;
   margin-bottom: 10px;
 }
 
 .session-details input {
-    background-color: transparent;
-    border: 1px solid black;
-    border-radius: 3px;
+  border: 3px ridge black;
+  border-radius: 7px;
+  background: transparent;
+  font-weight: bolder;
+  padding: 5px;
 }
 
 #prescription-details{
@@ -55,14 +57,14 @@
   font-size: 16px;
   padding: 5px 25px;
   border-width: 3px;
-  background-color: #A0E9FF;
+  background-color: #AEDEFC;
   transition: 0.3s ease;
   float: right;
   cursor: pointer;
 }
 
 #submit:hover{
-  background-color: #89CFF3;
+  background-color: #5BBCFF;
   color: black;
 }
 
@@ -75,14 +77,14 @@
   font-size: 16px;
   padding: 5px 25px;
   border-width: 3px;
-  background-color: #A0E9FF;
+  background-color: #AEDEFC;
   transition: 0.3s ease;
   float: right;
   cursor: pointer;
 }
 
 #delete:hover{
-  background-color: #89CFF3;
+  background-color: #5BBCFF;
   color: black;
 }
 
@@ -99,8 +101,8 @@
 }
 
 .prescription fieldset{
-  border: 1px solid black;
-  border-radius: 5px;
+  border: 3px ridge black;
+  border-radius: 7px;
   margin-bottom: 20px;
   margin-right: -20px;
 }
@@ -119,7 +121,7 @@
   font-size: 16px;
   padding: 5px 25px;
   border-width: 3px;
-  background-color: #A0E9FF;
+  background-color: #AEDEFC;
   transition: 0.3s ease;
   float: right;
   cursor: pointer;
@@ -128,6 +130,6 @@
 }
 
 #save:hover, #delete:hover{
-  background-color: #89CFF3;
+  background-color: #5BBCFF;
   color: black;
 }
