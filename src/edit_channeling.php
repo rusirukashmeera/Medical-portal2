@@ -71,10 +71,10 @@
         <div class="navbar">
             <ul class="options">
                 <li><a href="index.php">Home</a></li>
-                <li><a href="#">Our Services</a></li>
+                <li><a href="our_services.php">Our Services</a></li>
                 <li><a href="about_us.php">About Us</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">FAQ</a></li>
+                <li><a href="new_contact.php">Contact Us</a></li>
+                <li><a href="faq.php">FAQ</a></li>
                 <li><a href="#" class="active">Edit Channeling</a></li>
             </ul>
             <button id="signupBtn">Sign Out</button>
@@ -133,6 +133,6 @@
 
     <script src="js/edit_channeling.js"></script>
     <script src="js/signout.js"></script>
-    
+
 </body>
 </html>
