@@ -75,16 +75,19 @@
     <script src="js/home.js"></script>
 
     <script>
+    // Select all FAQ question buttons and add click event listeners
     document.querySelectorAll('.faq-question').forEach(button => {
         button.addEventListener('click', () => {
-            const answer = button.nextElementSibling;
+            const answer = button.nextElementSibling;// Get the corresponding answer element
 
-            button.classList.toggle('active');
+            button.classList.toggle('active');// Toggle active class for styling
 
+            // Toggle the display of the answer
             if (answer.style.display === 'block') {
-                answer.style.display = 'none';
+                answer.style.display = 'none';// Hide answer if currently visible
+
             } else {
-                answer.style.display = 'block';
+                answer.style.display = 'block';// Show answer if currently hidden
             }
         });
     });

@@ -44,6 +44,7 @@ footer.footerX{
     height: auto;
 }
 
+/* Styling for profile part */
 .profile{
     margin-right: 100px;
     display: flex;
@@ -78,6 +79,7 @@ footer.footerX{
     background-color: #89CFF3;
 }
 
+/* styling for the content */
 .content{
     flex: 1;
     height: 100%;
@@ -155,6 +157,7 @@ ul.options li a:hover {
     display: flex;
 }
 
+/* styling for the contact box */
 .contactbox {
     background:white;
     border:#000000;
