@@ -14,6 +14,13 @@ if (mysqli_num_rows($result2) > 0) {
     $row2 = mysqli_fetch_assoc($result2);
     $docID = $row2["Doctor_Id"];
 }
+
+if(isset($_POST["logout"])){
+    session_unset();
+    session_destroy();
+    mysqli_close($conn);
+    header("Location: index.php");
+}
 ?>
 
 <!DOCTYPE html>
