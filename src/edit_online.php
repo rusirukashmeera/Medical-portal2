@@ -1,16 +1,25 @@
+<!-- IT23840782  W.M.D.N.Weerakoon  -->
+
 <?php
+    // configuration file use to connect to the database
     include_once("config.php");
+
+    //session start
     session_start();
+
+    //user's first and last name from the session
     $firstName = $_SESSION["firstName"];
     $lastName = $_SESSION["lastName"];
     $sql_doc = "SELECT U.First_Name, U.Last_Name, D.Doctor_Id, D.Specialization FROM user_table U, doctor D WHERE U.Email = D.Email";
     $result_doc = mysqli_query($conn, $sql_doc);
-    $bookingID = $_SESSION["bookingID"];
-    if(isset($_POST["edit"])){
-        $date = $_POST["date"];
+    $bookingID = $_SESSION["bookingID"];     // Get the booking ID from the session
+    if(isset($_POST["edit"])){            //when edit button is pressed
+        $date = $_POST["date"];        // Retrieve the new date and booking time from the submitted form
         $bookingTime = $_POST["bookingTime"];
         $patID = $_SESSION["patID"];
         $sql_edit_booking = "UPDATE online_booking SET Date = '$date', Session_No = $bookingTime WHERE Booking_Id = $bookingID";
+
+        // Execute the SQL query and check if it was successful
         if(mysqli_query($conn, $sql_edit_booking)){
             echo "<script>alert('Booking edited successfully!');
                 setTimeout(function() {
@@ -18,6 +27,7 @@
                 }, 1);</script>";
         }
     }
+    //clear session variables and destroy the session
     if(isset($_POST["logout"])){
         session_unset();
         session_destroy();

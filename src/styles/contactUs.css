@@ -1,3 +1,4 @@
+/* IT23823334 W.M.S.Methara */
 /* General reset for body */
 body {
     font-family: sans-serif;
@@ -37,6 +38,7 @@ footer.footerX{
     font-weight: bold;
 }
 
+/* Styling for the logo image */
 .logo {
     width: 100px;
     height: auto;

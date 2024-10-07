@@ -1,3 +1,5 @@
+<!-- IT23840782  W.M.D.N.Weerakoon  -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +8,6 @@
     <title>MEDPORTAL</title>
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/about_us.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <div class="tops">
@@ -37,10 +38,10 @@
             <!-- <button id="signupBtn">Sign Up</button> -->
         </div>
     </div>
+    
     <div class="content">
-        
+        <!-- Our Story  -->
         <div class="banner">
-
             <img src="images/Our story.jpg" width="350" height="245" alt="Our story">
 
             <div class="story">
@@ -55,7 +56,7 @@
             </div>
 
         </div>
-        
+        <!-- Vission & Mission -->
         <div class="details">
             <div class="Vision">
                 <h4>Our Vision</h4>
@@ -86,10 +87,9 @@
             </div>
         </div>
         
+        <!-- Our Values -->
         <h4 id="ourValues" >Our Values</h4>
-
         <div class="Values">
-
             <div class="value1">
                     <p>Lorem ipsum dolor sit amet,
                         consectetur adipiscing elit,
@@ -113,10 +113,9 @@
                     ut labore et dolore magna aliqua.
                 </p>
             </div>
-
         </div>
+    </div>  
 
-    </div>                  
     <footer class="footerX">
         <p>Lifeline Healthcare &copy; 2024. All rights reserved.</p>
     </footer>
