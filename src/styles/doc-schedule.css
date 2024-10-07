@@ -7,14 +7,14 @@
 }
 
 .schedule-date-time{
-    border: 2px solid black;
-    border-radius: 5px;
+    border: 3px ridge black;
+    border-radius: 7px;
     margin-top: 20px;
     width: 20%;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #bbe5fa;
+    background-color: #91DDCF;
 }
 .date-time{
     margin: 20px;
@@ -30,12 +30,12 @@
     font-size: 16px;
     padding: 5px 25px;
     border-width: 3px;
-    background-color: #A0E9FF;
+    background-color: #AEDEFC;
     transition: 0.3s ease;
 }
 
 .date-time button:hover{
-    background-color: #89CFF3;
+    background-color: #5BBCFF;
     color: black;
 }
 
@@ -48,21 +48,23 @@
 } */
 
 .date-time input{
-    border: 1px solid black;
-    border-radius: 5px;
-    background-color: #A0E9FF;
+    border: 3px ridge black;
+    border-radius: 7px;
+    background-color: #AEDEFC;
 }
 
 table{
     width: 100%;
-    border: 2px solid black;
+    border: 3px ridge black;
+    border-radius: 7px;
     visibility: hidden;
     margin-bottom: 20px;
-    background-color: #bbe5fa;
+    background-color: #91DDCF;
 }
 
 th, td{
-    border: 1px solid black;
+    border: 3px ridge black;
+    border-radius: 7px;
     padding: 10px;
 }
 
@@ -73,7 +75,7 @@ th, td{
     font-size: 16px;
     padding: 5px 25px;
     border-width: 3px;
-    background-color: #A0E9FF;
+    background-color: #AEDEFC;
     transition: 0.3s ease;
     display: block;
     margin-left: auto;
@@ -83,6 +85,6 @@ th, td{
 }
 
 #start-session:hover{
-    background-color: #89CFF3;
+    background-color: #5BBCFF;
     color: black;
 }
