@@ -1,3 +1,4 @@
+/* applying general styles to the body */
 body {
     font-family: sans-serif;
     margin: 0;
@@ -7,6 +8,7 @@ body {
     flex-direction: column;
 }
 
+/* styling the header */
 header.headerX {
     display: flex;
     align-items: center;
@@ -19,13 +21,13 @@ header.headerX {
 }
 
 .tops{
-    /*flex: 1; not necessary*/
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
 }
 
+/* styling the footer */
 footer.footerX{
     text-align: center;
     background-color: #8393ca;
@@ -35,11 +37,13 @@ footer.footerX{
     font-weight: bold;
 }
 
+/* styling the logo */
 .logo {
     width: 80px;
     height: auto;
 }
 
+/* styling the user profile section at top right*/
 .profile{
     margin-right: 20px;
     display: flex;
@@ -71,6 +75,7 @@ footer.footerX{
     color: hsl(179, 50%, 75%);
 }
 
+/* styling the navigation bar */
 .navbar {
     display: flex;
     width: 100%;
@@ -130,6 +135,7 @@ ul.options li a:hover {
     background-color: #2fa6f3;  
 }
 
+/* styling the sign up button */
 #signupBtn{
     margin-left: auto;
     margin-right: 138px;

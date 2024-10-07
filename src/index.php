@@ -1,19 +1,28 @@
 <?php
-    include_once("config.php");
-    session_start();
-    $loginCheck = null;  //variable to store login status
+    include_once("config.php"); //establish connection with the database
+
+    session_start(); //start the session
+
+    $loginCheck = null; //variable to store login status
+
     if(isset($_POST["signinHome"])){
         if(!empty($_POST["email"]) && !empty($_POST["password"])){
-            $_SESSION["email"] = $_POST["email"];
-            $_SESSION["password"] = $_POST["password"];
+            $_SESSION["email"] = $_POST["email"]; //get the email from the form and store in a session variable
+            $_SESSION["password"] = $_POST["password"]; //get the password the form and store in a session variable
+
+            //sql query to retrieve user data for the logged in user
             $sql = "SELECT * FROM user_table WHERE Email = '".$_SESSION["email"]."' AND Password = '".$_SESSION["password"]."'";
-            $result = mysqli_query($conn, $sql);
+
+            $result = mysqli_query($conn, $sql); //storing the result after executing the sql query
+
             if(mysqli_num_rows($result) > 0){
-                $loginCheck = 1;  //indicate user logged in
-                $row = mysqli_fetch_assoc($result);
+                $loginCheck = 1; //indicate user logged in
+                $row = mysqli_fetch_assoc($result); //storing the result in an associative array
+
                 $_SESSION["firstName"] = $row["First_Name"];
                 $_SESSION["lastName"] = $row["Last_Name"];
-                $_SESSION["accType"] = $row["Account_Type"];
+                $_SESSION["accType"] = $row["Account_Type"]; //storing some user data in session variables
+
                 switch($row["Account_Type"]){
                     case "Receptionist": header("Location: manage_appointments.php");
                     break;
@@ -21,14 +30,20 @@
                     break;
                     case "Patient": header("Location: channeling.php");
                     break;
-                }
-            }
+                } //
+            } //execute only if the sql query returned any rows
             else{
-                $loginCheck = 0;  //indicate user not logged in
+                $loginCheck = 0; //indicate user not logged in
             }
-        }
-    }
-    mysqli_close($conn);
+        } //execute only if a valid email and password are submitted
+    } //execute only if sign in form is submitted
+
+    if(isset($_POST["signup"])){
+        header("Location: signup.php");
+    } //redirect to signup page if sign up button is clicked
+
+    mysqli_close($conn); //close the connection
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

@@ -1,3 +1,4 @@
+/* styling the forms for offline booking */
 .offlineBookingDiv{
     display: flex;
     align-items: center;
@@ -26,6 +27,7 @@
     height: 100%;
 }
 
+/* styling the buttons in offline booking */
 .bookingBtns button{
     font-size: 18px;
     border: 2px solid #000000;
@@ -52,6 +54,7 @@
     width: 394.98px;
 }
 
+/* styling lables and input elements in offline booking */
 .bookingTopics{
     font-weight: bold;
     font-size: 20px;

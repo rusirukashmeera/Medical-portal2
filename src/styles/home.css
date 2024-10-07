@@ -21,14 +21,17 @@
     padding: 10px 20px;
 }
 
+/* style the tab on mouse hover */
 #signinHome:hover{
     background-color: #111111;
 }
 
+/* style the active tab */
 #signinHome:active{
     background-color: #222222;
 }
 
+/* style all labels in signin form */
 .signinLbls{
     font-size: 25px;
     font-weight: bold;
@@ -38,6 +41,7 @@
     font-size: 15px;
 }
 
+/* style all input boxes in signin form */
 .signinVals{
     width: 400px;
     padding: 10px 20px;
