@@ -1,0 +1,90 @@
+/* .content {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+} */
+
+h1 {
+    text-align: center;
+    color: #333;
+    font-size: 36px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+}
+
+/* Service Grid Styling */
+.services-grid {
+    padding-left: 100px;
+    padding-right: 100px;
+    display: grid;
+    margin-top: 0;
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 20px;
+}
+
+.service-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 10px;
+}
+
+.service-item.black {
+    background-color: #000;
+    color: #fff;
+}
+
+.service-item.white {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+
+.service-description {
+    max-width: 60%;
+}
+
+.service-description h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.service-description p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Responsive Design for Smaller Screens */
+@media (max-width: 768px) {
+    .services-grid {
+        grid-template-columns: 1fr; /* One column on smaller screens */
+    }
+
+    .service-item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .service-description {
+        max-width: 100%;
+    }
+
+    .icon img {
+        margin-bottom: 20px;
+    }
+}
+
+.icon-size {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.icon-size img{
+    height: 80px;
+    width: 80px;
+
+}

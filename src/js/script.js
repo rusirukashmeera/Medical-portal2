@@ -27,11 +27,11 @@ let prevPos = window.scrollY;
 
 window.addEventListener("scroll", dynamicNavbar);
 
-const signinForm = document.getElementById("signinForm");
-const check = document.getElementById("check");
-const email = document.getElementById("email");
-const password = document.getElementById("password");
-const signinHome = document.getElementById("signinHome");
+// const signinForm = document.getElementById("signinForm");
+// const check = document.getElementById("check");
+// const email = document.getElementById("email");
+// const password = document.getElementById("password");
+// const signinHome = document.getElementById("signinHome");
 /*
 function loginCheck(event){
     if(email.value == ""){
@@ -40,6 +40,14 @@ function loginCheck(event){
     }
 }
 signinHome.addEventListener("click", loginCheck);*/
-signinHome.addEventListener("click", loginCheck);
+
 window.addEventListener("scroll", dynamicNavbar);
 
+const signupBtn = document.getElementById("signupBtn");
+const signupForm = document.getElementById("signupForm");
+
+function signUp(){
+    signupForm.submit();
+}
+
+signupBtn.addEventListener("click", signUp);
