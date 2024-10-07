@@ -26,11 +26,11 @@
     if(!isset($_SESSION["specialization"])){$_SESSION["specialization"] = "";}
     if(!isset($_SESSION["time"])){$_SESSION["time"] = "";}
     if(isset($_POST["search"])){
-        $patID = $_POST["searchId"];
-        $_SESSION["searchId"] = $patID;
-        if(!empty($patID)){
+        $bookingID = $_POST["searchId"];
+        $_SESSION["searchId"] = $bookingID;
+        if(!empty($bookingID)){
             $sql_get_patient = "SELECT O.Booking_Id, O.Patient_Id, O.Doctor_Id, O.Date, O.Session_No, P.Gender, P.Address, U.First_Name,
-            U.Last_Name, U.Contact_No FROM online_booking O, patient P, user_table U WHERE O.Patient_Id = P.Patient_Id AND P.Email = U.Email AND O.Patient_Id = $patID";
+            U.Last_Name, U.Contact_No FROM online_booking O, patient P, user_table U WHERE O.Patient_Id = P.Patient_Id AND P.Email = U.Email AND O.Booking_Id = $bookingID";
             $result_get_patient = mysqli_query($conn, $sql_get_patient);
             if(mysqli_num_rows($result_get_patient) > 0){
                 $row = mysqli_fetch_assoc($result_get_patient);
@@ -66,7 +66,7 @@
             }
         }
     }
-    if(isset($_POST["confirm"]) && !empty($_SESSION["patID"])){
+    if(isset($_POST["confirm"]) && !empty($_SESSION["bookingID"])){
         $sql_get_age = "SELECT TIMESTAMPDIFF(YEAR, DOB, CURDATE()) AS Age FROM patient WHERE ".$_SESSION["patID"]." = Patient_Id";
         $result_get_age = mysqli_query($conn, $sql_get_age);
         if(mysqli_num_rows($result_get_age) > 0){
@@ -78,7 +78,8 @@
         $sql_confirm = "INSERT INTO confirm_booking (Patient_Id, First_Name, Age, Gender, Doctor_Id, Date, Session_No, Type, Charge)
         VALUES (" . $_SESSION["patID"] . ", '" . $_SESSION["patFirstName"] . "', $age, '" . $_SESSION["gender"] . "', " . $_SESSION["docID"] . ", '" . $_SESSION["date"] . "', " . $_SESSION["sessionNo"] . ", 'Online', $charge)";
         $patID = $_SESSION["patID"];
-        $sql_delete_booking = "DELETE FROM online_booking WHERE Patient_Id = $patID";
+        $bookingID = $_SESSION["bookingID"];
+        $sql_delete_booking = "DELETE FROM online_booking WHERE Booking_Id = $bookingID";
         if(mysqli_query($conn, $sql_confirm)){
             mysqli_query($conn, $sql_delete_booking);
             echo "<script>alert('Appointment confirmed successfully!');
@@ -87,9 +88,9 @@
                 }, 1);</script>";
         }
     }
-    if(isset($_POST["cancel"]) && !empty($_SESSION["patID"])){
-        $patID = $_SESSION["patID"];
-        $sql_delete_booking = "DELETE FROM online_booking WHERE Patient_Id = $patID";
+    if(isset($_POST["cancel"]) && !empty($_SESSION["bookingID"])){
+        $bookingID = $_SESSION["bookingID"];
+        $sql_delete_booking = "DELETE FROM online_booking WHERE Booking_Id = $bookingID";
         if(mysqli_query($conn, $sql_delete_booking)){
             echo "<script>alert('Appointment deleted successfully!');
                 setTimeout(function() {
@@ -97,7 +98,7 @@
                 }, 1);</script>";
         }
     }
-    if(isset($_POST["edit"]) && !empty($_SESSION["patID"])){
+    if(isset($_POST["edit"]) && !empty($_SESSION["bookingID"])){
         header("Location: edit_online.php");
     }
 ?>
@@ -174,7 +175,7 @@
             <div class="section2">
                 <form action="#" method="POST">
                     <fieldset class="Booking">
-                        <legend>Booking Details</legend>
+                        <legend>Booking Details <?php if(!empty($bookingID)){echo " ".$bookingID;} ?></legend>
                         
                         <label for="">Doctor</label>
                         <input type="text" class="bookingDetail" style="background-color: #dddddd;" name="docName" id="docName" value='<?php if(isset($_POST["search"])){echo $_SESSION["docFirstName"]." ".$_SESSION["docLastName"]." - ".$_SESSION["specialization"];} ?>' readonly>

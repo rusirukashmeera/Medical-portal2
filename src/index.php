@@ -66,6 +66,9 @@
                 <li><a href="#">FAQ</a></li>
             </ul>
             <button id="signupBtn">Sign Up</button>
+            <form id="signupForm" method="POST" action="signup.php" style="display: none;">
+                <input type="text" value="1" name="signup">
+            </form>
         </div>
     </div>
     <div class="content" id="content">

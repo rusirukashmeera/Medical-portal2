@@ -52,7 +52,7 @@
                 </div>
             </div>
             <div class="profile">
-                <img class="avatar" src="images/avatar.png" alt="Generic Avatar">
+                <a href="edit_profile.php"><img class="avatar" src="images/avatar.png" alt="Generic Avatar"></a>
                 <div class="accInfo">
                     <label class="accName"><?php echo $firstName." ".$lastName ?></label><br>
                     <label class="accType">Patient</label>

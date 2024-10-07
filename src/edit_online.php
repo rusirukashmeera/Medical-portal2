@@ -5,11 +5,12 @@
     $lastName = $_SESSION["lastName"];
     $sql_doc = "SELECT U.First_Name, U.Last_Name, D.Doctor_Id, D.Specialization FROM user_table U, doctor D WHERE U.Email = D.Email";
     $result_doc = mysqli_query($conn, $sql_doc);
+    $bookingID = $_SESSION["bookingID"];
     if(isset($_POST["edit"])){
         $date = $_POST["date"];
         $bookingTime = $_POST["bookingTime"];
         $patID = $_SESSION["patID"];
-        $sql_edit_booking = "UPDATE online_booking SET Date = '$date', Session_No = $bookingTime WHERE Patient_Id = $patID";
+        $sql_edit_booking = "UPDATE online_booking SET Date = '$date', Session_No = $bookingTime WHERE Booking_Id = $bookingID";
         if(mysqli_query($conn, $sql_edit_booking)){
             echo "<script>alert('Booking edited successfully!');
                 setTimeout(function() {
@@ -85,7 +86,7 @@
             <div class="section2">
                 <form action="#" method="POST">
                     <fieldset class="Booking">
-                        <legend>Booking Details</legend>
+                        <legend>Booking Details <?php if(!empty($bookingID)){echo " ".$bookingID;} ?></legend>
                         
                         <label for="">Doctor</label>
                         <input type="text" class="bookingDetail" style="background-color: #dddddd;" name="docName" id="docName" value='<?php echo $_SESSION["docFirstName"]." ".$_SESSION["docLastName"]." - ".$_SESSION["specialization"]; ?>' readonly>
