@@ -15,5 +15,10 @@
         mysqli_query($conn, $sql_update_app);
         header("Location: manage_appointments.php");
     }
-    //mysqli_close($conn);
+    // if(isset($_POST["logout"])){
+    //     session_unset();
+    //     session_destroy();
+    //     mysqli_close($conn);
+    //     header("Location: index.php");
+    // }
 ?>

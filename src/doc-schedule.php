@@ -4,6 +4,7 @@ session_start();
 
 $firstName = $_SESSION["firstName"];
 $lastName = $_SESSION["lastName"];
+<<<<<<< HEAD
 $email = $_SESSION["email"];
 
 $sql2 = "SELECT Doctor_Id FROM doctor WHERE Email = '$email'";
@@ -13,6 +14,14 @@ $result2 = mysqli_query($conn, $sql2);
 if (mysqli_num_rows($result2) > 0) {
     $row2 = mysqli_fetch_assoc($result2);
     $docID = $row2["Doctor_Id"];
+=======
+
+if(isset($_POST["logout"])){
+    session_unset();
+    session_destroy();
+    mysqli_close($conn);
+    header("Location: index.php");
+>>>>>>> 6db4a15f7e4e27ee44bdcda23323812cb97cc6fd
 }
 ?>
 
@@ -48,7 +57,10 @@ if (mysqli_num_rows($result2) > 0) {
                 <li><a href="#"  class="active">Schedule</a></li>
                 <li><a href="doc-appoinment-ongoing.php" >Session</a></li>
             </ul>
-            <button id="signupBtn">Log Out</button>
+            <button id="signupBtn">Sign Out</button>
+            <form id="logoutForm" method="POST" action="doc-schedule.php" style="display: none;">
+                <input type="text" value="1" name="logout">
+            </form>
         </div>
     </div>
     <div class="content">
@@ -118,5 +130,6 @@ if (mysqli_num_rows($result2) > 0) {
     </footer>
 
     <script src="../src/js/doc-schedule.js"></script>
+    <script src="js/signout.js"></script>
 </body>
 </html>

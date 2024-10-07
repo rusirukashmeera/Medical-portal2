@@ -101,7 +101,12 @@
     if(isset($_POST["edit"]) && !empty($_SESSION["bookingID"])){
         header("Location: edit_online.php");
     }
-    mysqli_close($conn);
+    if(isset($_POST["logout"])){
+        session_unset();
+        session_destroy();
+        mysqli_close($conn);
+        header("Location: index.php");
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -220,5 +225,6 @@
         <p>Lifeline Healthcare &copy; 2024. All rights reserved.</p>
     </footer>
     <script src="js/receptionist_online.js"></script>
+    <script src="js/signout.js"></script>
 </body>
 </html>
