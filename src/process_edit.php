@@ -15,4 +15,5 @@
         mysqli_query($conn, $sql_update_app);
         header("Location: manage_appointments.php");
     }
+    //mysqli_close($conn);
 ?>

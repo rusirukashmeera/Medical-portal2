@@ -13,4 +13,5 @@
         mysqli_query($conn, $sql_insert_offline);
         header("Location: manage_appointments.php");
     }
+    //mysqli_close($conn);
 ?>

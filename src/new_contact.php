@@ -33,7 +33,7 @@
                 <li><a href="#" class="active">Contact Us</a></li>
                 <li><a href="#">FAQ</a></li>
             </ul>
-            <button id="signupBtn">Sign Up</button>
+            <!-- <button id="signupBtn">Sign Up</button> -->
         </div>
     </div>
     <div class="content">

@@ -45,6 +45,7 @@
                     }, 1);</script>";
         }
     }
+    //mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -82,6 +83,9 @@
                 <li><a href="#">FAQ</a></li>
             </ul>
             <button id="signupBtn">Sign Out</button>
+            <form id="logoutForm" method="POST" action="receptionist_offline.php" style="display: none;">
+                <input type="text" value="1" name="logout">
+            </form>
         </div>
     </div>
     <div class="content" id="content">

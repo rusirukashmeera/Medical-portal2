@@ -33,9 +33,7 @@
                 <li><a href="new_contact.php">Contact Us</a></li>
                 <li><a href="#">FAQ</a></li>
             </ul>
-            <!-- <a href="signup.php">
-                <button id="signupBtn">Sign Up</button>
-            </a> -->
+            <!-- <button id="signupBtn">Sign Up</button> -->
         </div>
     </div>
     <div class="content" id="content">

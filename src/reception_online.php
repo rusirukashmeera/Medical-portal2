@@ -101,6 +101,7 @@
     if(isset($_POST["edit"]) && !empty($_SESSION["bookingID"])){
         header("Location: edit_online.php");
     }
+    mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">

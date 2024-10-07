@@ -17,6 +17,7 @@
     $e_dateX = $_GET["dateX"];
     $e_timeX = $_GET["timeX"];
     $e_charge = $_GET["charge"];
+    //mysqli_close($conn);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -55,6 +56,9 @@
                 <li><a href="receptionist_offline.php">Offline Booking</a></li>
             </ul>
             <button id="signupBtn" name="signupBtn">Sign Out</button>
+            <form id="logoutForm" method="POST" action="receptionist_offline.php" style="display: none;">
+                <input type="text" value="1" name="logout">
+            </form>
         </div>
     </div>
     <div class="content" id="content">
