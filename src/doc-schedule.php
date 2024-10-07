@@ -1,26 +1,27 @@
 <?php
 include_once ("config.php");
-session_start();
+session_start();// Start the session
 
+//retreve data from the session 
 $firstName = $_SESSION["firstName"];
 $lastName = $_SESSION["lastName"];
-$email = $_SESSION["email"];
+$email = $_SESSION["email"]; 
 
-$sql2 = "SELECT Doctor_Id FROM doctor WHERE Email = '$email'";
+$sql2 = "SELECT Doctor_Id FROM doctor WHERE Email = '$email'"; //get the doctor id from the doctor table
 
-$result2 = mysqli_query($conn, $sql2);
+$result2 = mysqli_query($conn, $sql2); //execute the $sql2 query in the database
 
 if (mysqli_num_rows($result2) > 0) {
     $row2 = mysqli_fetch_assoc($result2);
     $docID = $row2["Doctor_Id"];
-}
+}//store doctor id in to docID
 
 if(isset($_POST["logout"])){
     session_unset();
     session_destroy();
     mysqli_close($conn);
     header("Location: index.php");
-}
+}//signout function
 ?>
 
 <!DOCTYPE html>
@@ -60,7 +61,7 @@ if(isset($_POST["logout"])){
                 <input type="text" value="1" name="logout">
             </form>
         </div>
-    </div>
+    </div><!--end of the top part-->
     <div class="content">
         <div class="schedule-date-time">
             <form action="" class="date-time" id="date-time" method="POST">
@@ -98,6 +99,7 @@ if(isset($_POST["logout"])){
     if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['date'])) {
         $date = $_POST['date'];
         $session = $_POST['session'];
+        //catch data from the form and assign them to the variables
 
     
         // Fetch data from confirm_booking table
@@ -111,10 +113,10 @@ if(isset($_POST["logout"])){
                 echo "<td>" . $row["First_name"] . "</td>";
                 echo "<td>" . $row["Date"] . "</td>";
                 echo "</tr>";
-            }
+            }//display the appoinments in the table
         } else {
             echo "<tr><td colspan='4'>No bookings found</td></tr>";
-        }
+        }//display "No bookingss found" if there are no bookings    
     }
     $conn->close();
     ?>
@@ -125,7 +127,7 @@ if(isset($_POST["logout"])){
     </div>
     <footer class="footerX">
         <p>Lifeline Healthcare &copy; 2024. All rights reserved.</p>
-    </footer>
+    </footer><!--end of the footer-->
 
     <script src="../src/js/doc-schedule.js"></script>
     <script src="js/signout.js"></script>
