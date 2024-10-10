@@ -32,9 +32,7 @@
         // Execute the update query and provide feedback
         if(mysqli_query($conn, $sql_update_booking)){
             echo "<script>alert('Channeling with booking id $appID updated successfully!');
-            setTimeout(function() {
-                    window.location.href = 'channeling.php';
-                }, 1);</script>";
+            </script>";
         }
     }
 
