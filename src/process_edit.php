@@ -9,11 +9,20 @@
         $e_docID = $_GET["docID"];
         $e_dateX = $_GET["dateX"];
         $e_timeX = $_GET["timeX"];
-        $e_charge = $_GET["totalCharge"];
+        $e_charge = $_GET["totalCharge"]; // storing GET values in local variables
+
+        // sql query to update a record in confirm_booking table
         $sql_update_app = "UPDATE confirm_booking SET First_Name = '$e_patName', Age = $e_patAge, Gender = '$e_gender', Doctor_ID = $e_docID, 
         Date = '$e_dateX', Session_No = $e_timeX, Charge = $e_charge WHERE Appointment_Id = $e_appID";
-        mysqli_query($conn, $sql_update_app);
-        header("Location: manage_appointments.php");
+        
+        //header("Location: manage_appointments.php");
+
+        if(mysqli_query($conn, $sql_update_app)){
+            echo "<script>alert('Appointment edited successfully!');
+            setTimeout(function() {
+                    window.location.href = 'manage_appointments.php';
+                }, 1);</script>";
+        } //redirect to appointment table if record was updated succesfully (with a success message)
     }
     // if(isset($_POST["logout"])){
     //     session_unset();

@@ -30,7 +30,7 @@
                     break;
                     case "Patient": header("Location: channeling.php");
                     break;
-                } //
+                } //redirect to portals according to account type of user
             } //execute only if the sql query returned any rows
             else{
                 $loginCheck = 0; //indicate user not logged in
@@ -45,17 +45,22 @@
     mysqli_close($conn); //close the connection
 
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MEDPORTAL</title>
+
+    <!-- including css -->
     <link rel="stylesheet" href="styles/style.css">
     <link rel="stylesheet" href="styles/home.css">
 </head>
 <body>
     <div class="tops">
+
+        <!-- header -->
         <header class="headerX">
             <img class="logo" src="images/logo2.png" alt="MEDPORTAL Logo">
             <div class="title">
@@ -72,6 +77,8 @@
                 </div>
             </div>
         </header>
+
+        <!-- navbar -->
         <div class="navbar" id="navbar">
             <ul class="options">
                 <li><a href="#" class="active">Home</a></li>
@@ -86,7 +93,10 @@
             </form>
         </div>
     </div>
+
+    <!-- main content -->
     <div class="content" id="content">
+        <!-- signin form -->
         <div class="signin">
             <form id="signinForm" action="index.php" method="POST">
                 <label class="signinLbls" for="">Username</label><br>
@@ -102,9 +112,13 @@
             </form>
         </div>
     </div>
+
+    <!-- footer -->
     <footer class="footerX">
         <p>Lifeline Healthcare &copy; 2024. All rights reserved.</p>
     </footer>
+
+    <!-- including javascript -->
     <script src="js/script.js"></script>
     <script src="js/home.js"></script>
 </body>

@@ -72,7 +72,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
     $sql2 = "INSERT INTO patient (DOB, Gender, Address, Email) VALUES ('$date_of_birth', '$gender', '$address', '$email')";
-    mysqli_query($conn, $sql2);
+    if(!mysqli_query($conn, $sql2)){
+        echo "error inserting";
+    }
 }
 $conn->close();
 ?>

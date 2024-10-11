@@ -41,30 +41,30 @@
             <center><h1>Frequently Asked Questions (FAQ)</h1><center>
         </div>
         <div class="faq-section">
-        <button class="faq-question">What is your return policy?</button>
+        <button class="faq-question">What if I do not remember my username?</button>
         <div class="faq-answer">
-            <p>Our return policy allows you to return items within 30 days of purchase. Items must be unused and in their original packaging.</p>
+            <p>You will have to call the Patient Portal Customer Service number at +94XXXXXXXX</p>
         </div>
     </div>
 
     <div class="faq-section">
-        <button class="faq-question">How long does shipping take?</button>
+        <button class="faq-question">What if I do not remember my password or my account is locked out?</button>
         <div class="faq-answer">
-            <p>Shipping usually takes between 5-7 business days depending on your location. Expedited shipping options are available at checkout.</p>
-        </div>
-    </div>  
-
-    <div class="faq-section">
-        <button class="faq-question">Do you ship internationally?</button>
-        <div class="faq-answer">
-            <p>Yes, we offer international shipping to most countries. Additional shipping charges may apply.</p>
+            <p>You are allowed 3 attempts to successfully log into the Patient Portal. After the third failed attempt, for your protection, your account will be locked out. You will need to call +94XXXXXXXX  to reset your password.</p>
         </div>
     </div>
 
     <div class="faq-section">
-        <button class="faq-question">How can I track my order?</button>
+        <button class="faq-question">What if I notice something is not correct on the portal, such as allergy medication?</button>
         <div class="faq-answer">
-            <p>Once your order is shipped, we will send you a tracking number via email, which you can use to track your order on our website.</p>
+            <p>You should make a note of this and discuss it with the physician or clinic staff member at your next visit.</p>
+        </div>
+    </div>
+
+    <div class="faq-section">
+        <button class="faq-question">Do you have additional questions?</button>
+        <div class="faq-answer">
+            <p>If you have additional questions, please call Patient Portal Support at  and they will assist you</p>
         </div>
     </div>
     </div>

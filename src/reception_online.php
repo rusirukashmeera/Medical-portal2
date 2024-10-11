@@ -11,16 +11,16 @@
     $firstName = $_SESSION["firstName"];
     $lastName = $_SESSION["lastName"];
 
-    // logout from the session redirect to the index.php
-    if(isset($_POST["logout"])){
-        session_unset();
-        session_destroy();
-        header("Location: index.php");
-    }
+    // // logout from the session redirect to the index.php
+    // if(isset($_POST["logout"])){
+    //     session_unset();
+    //     session_destroy();
+    //     header("Location: index.php");
+    // }
 
-    // SQL query to fetch doctor details (first name, last name, doctor ID, specialization)
-    $sql_doc = "SELECT U.First_Name, U.Last_Name, D.Doctor_Id, D.Specialization FROM user_table U, doctor D WHERE U.Email = D.Email";
-    $result_doc = mysqli_query($conn, $sql_doc);
+    // // SQL query to fetch doctor details (first name, last name, doctor ID, specialization)
+    // $sql_doc = "SELECT U.First_Name, U.Last_Name, D.Doctor_Id, D.Specialization FROM user_table U, doctor D WHERE U.Email = D.Email";
+    // $result_doc = mysqli_query($conn, $sql_doc);
 
     // Initialize session variables
     if(!isset($_SESSION["searchId"])){$_SESSION["searchId"] = "";}
@@ -132,7 +132,7 @@
         session_destroy();
         mysqli_close($conn);
         header("Location: index.php");
-    }
+    }//logout function
 ?>
 
 <!DOCTYPE html>
