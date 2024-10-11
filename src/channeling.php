@@ -31,7 +31,7 @@
         $_SESSION["patID"] = $patID;
 
 
-        // Insert a new booking into the online_booking tabl
+        // Insert a new booking into the online_booking table
         $sql_create_booking = "INSERT INTO online_booking (Patient_Id, Doctor_Id, Date, Session_No) VALUES ($patID, $docID, '$date', $time)";
         if(mysqli_query($conn, $sql_create_booking)){
 

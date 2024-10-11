@@ -13,6 +13,7 @@
             event.preventDefault();
             window.alert("Please select a date");
         }
+         
     }
 
     /*Checks if any of the time slots (slot1, slot2, or slot3) are selected.
@@ -38,6 +39,7 @@
         const fetchDocID = document.getElementById("doctor").value;
         DoctorID.value = fetchDocID;
     }
+    
 
     // Updates the 'DoctorID' field as soon as the script runs
     updateDocID();
