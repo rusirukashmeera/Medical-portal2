@@ -21,7 +21,7 @@
     $_SESSION["appID"] = $e_appID;
     $e_patName = $_GET["patName"];
     $e_age = $_GET["age"];
-    $e_gender = $_GET["gender"];
+    $e_gender = trim($_GET["gender"]);
     $e_docName = $_GET["docName"];
     $e_dateX = $_GET["dateX"];
     $e_timeX = $_GET["timeX"];
@@ -97,17 +97,17 @@
                             <label for="" class="bookingLbls">Patient Age</label><br>
                             <input type="number" class="bookingVals" name="patAge" min="1" max="150" value="<?php echo $e_age; ?>" required><br><br>
                             <label for="" class="bookingLbls">Patient Gender</label><br>
-                            <input type="radio" name="gender" value="Male" checked><label for="" class="bookingLbls">Male</label>
-                            <input type="radio" name="gender" value="Female"><label for="" class="bookingLbls">Female</label>
+                            <input type="radio" name="gender" value="Male" <?php if($e_gender == 'Male'){echo 'checked';} ?>><label for="" class="bookingLbls">Male</label>
+                            <input type="radio" name="gender" value="Female" <?php if($e_gender == 'Female'){echo 'checked';} ?>><label for="" class="bookingLbls">Female</label>
                         </fieldset>
                     </div>
                     <div class="leftContentBottom">
                         <fieldset>
                             <legend class="bookingTopics">Payment</legend>
                             <label for="" class="bookingLbls">Hospital Charge</label><br>
-                            <input type="number" class="bookingVals" id="hospCharge"><br><br>
+                            <input type="number" class="bookingVals" id="hospCharge" min="0"><br><br>
                             <label for="" class="bookingLbls">Doctor's Charge</label><br>
-                            <input type="number" class="bookingVals" id="docCharge"><br><br>
+                            <input type="number" class="bookingVals" id="docCharge" min="0"><br><br>
                         </fieldset>
                     </div>
                 </div>

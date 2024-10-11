@@ -58,7 +58,7 @@
         session_destroy();
         mysqli_close($conn);
         header("Location: index.php");
-    }
+    } //logout function
 ?>
 
 

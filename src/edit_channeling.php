@@ -6,6 +6,7 @@
     session_start();
     $firstName = $_SESSION["firstName"];
     $lastName = $_SESSION["lastName"];
+    
     $appID = $_SESSION["appID"];
     $docID = $_SESSION["docID"];
     $date = $_SESSION["date"];

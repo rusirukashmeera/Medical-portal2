@@ -6,11 +6,11 @@
     $firstName = $_SESSION["firstName"];
     $lastName = $_SESSION["lastName"]; // retrieving some user data from session variables
 
-    // sql query to get appointment details
-    $sql_get_apps = "SELECT C.Appointment_Id, C.First_Name AS Pat_Name, C.Age, C.Gender, U.First_Name AS Doc_Name, C.Date, C.Session_No, C.Charge
-    FROM confirm_booking C, doctor D, user_table U WHERE C.Doctor_Id = D.Doctor_Id AND D.Email = U.Email ORDER BY C.Appointment_Id";
+    // // sql query to get appointment details
+    // $sql_get_apps = "SELECT C.Appointment_Id, C.First_Name AS Pat_Name, C.Age, C.Gender, U.First_Name AS Doc_Name, C.Date, C.Session_No, C.Charge
+    // FROM confirm_booking C, doctor D, user_table U WHERE C.Doctor_Id = D.Doctor_Id AND D.Email = U.Email ORDER BY C.Appointment_Id";
     
-    $result_get_apps = mysqli_query($conn, $sql_get_apps); // storing the result after executing the sql query
+    // $result_get_apps = mysqli_query($conn, $sql_get_apps); // storing the result after executing the sql query
 
     if(isset($_GET["appID"])){
         $delID = $_GET["appID"]; // appointment id to delete

@@ -48,14 +48,3 @@ function calcCharge(){
 //add 'mouseout' event listner for total calculation when mouse out from the input field
 HCharge.addEventListener("mouseout", calcCharge);
 DocCharge.addEventListener("mouseout", calcCharge);
-
-//Access to the sign in and logout button using id
-const signupBtn = document.getElementById("signupBtn");
-const logoutForm = document.getElementById("logoutForm");
-
-
-function logOut(){
-    logoutForm.submit();
-}
-
-signupBtn.addEventListener("click", logOut);

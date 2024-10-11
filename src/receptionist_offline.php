@@ -91,9 +91,9 @@
                     <div class="leftContentBottom">
                         <fieldset>
                             <legend class="bookingTopics">Payment</legend>
-                            <label for="" class="bookingLbls">Hospital Charge</label><br>
+                            <label for="" class="bookingLbls" min="0">Hospital Charge</label><br>
                             <input type="number" class="bookingVals" id="hospCharge"><br><br>
-                            <label for="" class="bookingLbls">Doctor's Charge</label><br>
+                            <label for="" class="bookingLbls" min="0">Doctor's Charge</label><br>
                             <input type="number" class="bookingVals" id="docCharge"><br><br>
                         </fieldset>
                     </div>
